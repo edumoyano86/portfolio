@@ -1,28 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, School, Award } from "lucide-react";
+import { Calendar, Award } from "lucide-react";
 
 const studies = [
     {
         title: "Carrera de Desarrollo Full Stack",
         institution: "Coderhouse",
-        date: "2021 - 2022",
-        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos.",
+        date: "2023 - Presente",
+        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos. Actualmente en curso.",
         icon: Award
-    },
-    {
-        title: "Diplomatura en Programación Web Full Stack con React JS",
-        institution: "Centro de e-Learning UTN FRBA",
-        date: "Mar 2021 - Ago 2021",
-        description: "Diplomatura enfocada en el desarrollo de páginas web, contenido digital/multimedia y recursos informáticos.",
-        icon: School
-    },
-    {
-        title: "Tecnicatura Universitaria en Programación",
-        institution: "Universidad Tecnológica Nacional (UTN)",
-        date: "En curso",
-        description: "Ampliando mis conocimientos formales en ciencias de la computación, algoritmos y estructuras de datos.",
-        icon: School
-    },
+    }
 ];
 
 export default function StudiesPage() {
@@ -33,7 +19,7 @@ export default function StudiesPage() {
                     Mi Trayectoria Educativa
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Una línea de tiempo de mi educación y aprendizaje en el mundo del desarrollo.
+                    Mi formación y aprendizaje continuo en el mundo del desarrollo.
                 </p>
             </header>
 
