@@ -2,7 +2,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone } from "lucide-react";
+import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone, Briefcase, Building } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -36,6 +36,23 @@ const featuredProjects = [
   }
 ];
 
+const experience = [
+    {
+        role: "Manager y Dueño",
+        company: "Tu Mundo",
+        period: "2010 - Presente",
+        description: "Lidero un emprendimiento comercial, gestionando operaciones, equipo y estrategias de venta. Esta experiencia me ha dado una fuerte perspectiva de negocio, que aplico para construir soluciones de software que resuelven problemas reales.",
+        icon: Building
+    },
+    {
+        role: "Desarrollador Full Stack",
+        company: "Freelance",
+        period: "2020 - Presente",
+        description: "Desarrollo aplicaciones web y móviles completas, desde la conceptualización hasta el despliegue. Me especializo en crear interfaces de usuario intuitivas y backend eficientes, siempre enfocado en la calidad y el rendimiento del producto final.",
+        icon: Briefcase
+    }
+]
+
 export default function Home() {
   const profileImage = PlaceHolderImages.find(p => p.id === 'profile');
   
@@ -45,7 +62,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             {profileImage && (
-              <Avatar className="w-32 h-32 mb-6 border-4 border-primary/10 shadow-lg">
+              <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
                 <AvatarImage src={profileImage.imageUrl} alt="Eduardo Moyano" data-ai-hint={profileImage.imageHint} />
                 <AvatarFallback>EM</AvatarFallback>
               </Avatar>
@@ -53,8 +70,8 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
                 Eduardo Moyano
             </h1>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-                Desarrollador Full Stack con más de 4 años de experiencia, apasionado por crear soluciones de calidad, interfaces intuitivas y un rendimiento óptimo.
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
+                Desarrollador Full Stack y emprendedor. Convierto ideas de negocio en soluciones de software robustas, intuitivas y de alto rendimiento.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg">
@@ -69,11 +86,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="mb-24 md:mb-32 scroll-mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Experiencia</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Mi viaje profesional y empresarial.</p>
+        </div>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          {experience.map((exp) => (
+            <Card key={exp.role} className="flex flex-col text-left">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                    <div className="p-2 bg-primary/10 rounded-full">
+                        <exp.icon className="h-6 w-6 text-primary"/>
+                    </div>
+                    <div>
+                        <CardTitle className="text-xl mb-1">{exp.role}</CardTitle>
+                        <p className="text-sm text-muted-foreground font-semibold">{exp.company} | {exp.period}</p>
+                    </div>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-foreground/80">{exp.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
       {/* Skills Section */}
       <section id="skills" className="mb-24 md:mb-32 scroll-mt-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Mis Herramientas</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Tecnologías con las que me encanta trabajar.</p>
+          <p className="mt-4 text-lg text-muted-foreground">Tecnologías con las que construyo soluciones.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {skills.map((skill) => (
@@ -134,7 +179,7 @@ export default function Home() {
           })}
         </div>
         <div className="text-center mt-12">
-          <Button variant="link" asChild className="text-accent-foreground text-lg hover:text-accent-foreground/80">
+          <Button variant="link" asChild className="text-lg">
             <Link href="/projects">Ver todos los proyectos <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
         </div>
