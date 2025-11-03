@@ -8,6 +8,14 @@ import Image from "next/image";
 
 const projects = [
     {
+        id: "kontalo",
+        title: "Kontalo - Gestión Minorista",
+        description: "Plataforma de gestión para comercios minoristas con catálogo público, desarrollada para optimizar mis propios emprendimientos. Creada con Firebase Studio.",
+        tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS"],
+        github: "#",
+        live: "https://kontalo.com.ar"
+    },
+    {
         id: "project-1",
         title: "E-commerce App",
         description: "Una aplicación de e-commerce completamente funcional con carrito de compras, gestión de productos y categorías. Construido con React y Firebase.",
@@ -81,7 +89,7 @@ export default function ProjectsPage() {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="gap-4 mt-auto">
-                                    <Button variant="outline" asChild className="flex-1">
+                                    <Button variant="outline" asChild className="flex-1" disabled={project.github === '#'}>
                                         <Link href={project.github} target="_blank" rel="noopener noreferrer">
                                             <Github className="mr-2"/> GitHub
                                         </Link>

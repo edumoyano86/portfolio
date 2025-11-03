@@ -18,37 +18,37 @@ const skills = [
 ];
 
 const featuredProjects = [
-  {
-    id: "project-1",
-    title: "E-commerce App",
-    description: "Una aplicación de e-commerce completamente funcional con carrito de compras, gestión de productos y categorías.",
-    tech: ["React.js", "Firebase", "Tailwind CSS"],
-    github: "https://github.com/EduMoyano/moyano-react-js-pf",
-    live: "https://moyano-react-js-pf.vercel.app/"
-  },
-  {
-    id: "project-2",
-    title: "Weather App",
-    description: "Una aplicación del clima que muestra las condiciones actuales y el pronóstico utilizando una API externa.",
-    tech: ["JavaScript", "HTML", "CSS", "API"],
-    github: "https://github.com/EduMoyano/app-clima-js",
-    live: "https://app-clima-js.vercel.app/"
-  }
+    {
+        id: "kontalo",
+        title: "Kontalo - Gestión Minorista",
+        description: "Plataforma de gestión para comercios minoristas con catálogo público, desarrollada para optimizar mis propios emprendimientos.",
+        tech: ["Next.js", "Firebase", "Tailwind CSS"],
+        github: "#",
+        live: "https://kontalo.com.ar"
+    },
+    {
+        id: "project-1",
+        title: "E-commerce App",
+        description: "Una aplicación de e-commerce completamente funcional con carrito de compras, gestión de productos y categorías.",
+        tech: ["React.js", "Firebase", "Tailwind CSS"],
+        github: "https://github.com/EduMoyano/moyano-react-js-pf",
+        live: "https://moyano-react-js-pf.vercel.app/"
+    }
 ];
 
 const experience = [
     {
-        role: "Manager y Dueño",
-        company: "Tu Mundo",
-        period: "2010 - Presente",
-        description: "Lidero un emprendimiento comercial, gestionando operaciones, equipo y estrategias de venta. Esta experiencia me ha dado una fuerte perspectiva de negocio, que aplico para construir soluciones de software que resuelven problemas reales.",
+        role: "Propietario y Emprendedor",
+        company: "J&L Librería y Xime Joyería",
+        period: "2019 - Presente",
+        description: "Gestiono dos emprendimientos, 'Xime Joyería' y 'J&L Librería', manejando la venta directa, online (redes sociales, Mercado Libre) y catálogos digitales. Esta experiencia directa con las necesidades del negocio me inspiró a crear soluciones de software a medida.",
         icon: Building
     },
     {
         role: "Desarrollador Full Stack",
-        company: "Freelance",
+        company: "Freelance & Proyectos Propios",
         period: "2020 - Presente",
-        description: "Desarrollo aplicaciones web y móviles completas, desde la conceptualización hasta el despliegue. Me especializo en crear interfaces de usuario intuitivas y backend eficientes, siempre enfocado en la calidad y el rendimiento del producto final.",
+        description: "Desarrollo aplicaciones web completas, como 'Kontalo.com.ar', una plataforma de gestión minorista que nació de mi propia necesidad como comerciante. Mi foco es crear herramientas que sean útiles, eficientes y resuelvan problemas del mundo real.",
         icon: Briefcase
     }
 ]
@@ -71,7 +71,7 @@ export default function Home() {
                 Eduardo Moyano
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-                Desarrollador Full Stack y emprendedor. Convierto ideas de negocio en soluciones de software robustas, intuitivas y de alto rendimiento.
+                Desarrollador Full Stack y Emprendedor. Convierto problemas de negocio en soluciones de software robustas, aplicando mi experiencia directa como comerciante.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg">
@@ -163,12 +163,12 @@ export default function Home() {
                   </div>
                 </CardContent>
                 <CardFooter className="gap-2">
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" asChild disabled={project.github === '#'}>
                     <Link href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2"/> GitHub
                     </Link>
                   </Button>
-                  <Button asChild>
+                  <Button asChild disabled={project.live === '#'}>
                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2"/> Ver Demo
                     </Link>
