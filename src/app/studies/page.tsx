@@ -6,15 +6,15 @@ const studies = [
         title: "Carrera de Desarrollo Full Stack",
         institution: "Coderhouse",
         date: "2021 - 2022",
-        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos SQL y NoSQL.",
-        icon: School
+        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos.",
+        icon: Award
     },
     {
-        title: "Carrera de Desarrollo Backend",
-        institution: "Coderhouse",
-        date: "2022",
-        description: "Especialización en el lado del servidor, con foco en Node.js, arquitectura de software, performance y bases de datos avanzadas.",
-        icon: Award
+        title: "Diplomatura en Programación Web Full Stack con React JS",
+        institution: "Centro de e-Learning UTN FRBA",
+        date: "Mar 2021 - Ago 2021",
+        description: "Diplomatura enfocada en el desarrollo de páginas web, contenido digital/multimedia y recursos informáticos.",
+        icon: School
     },
     {
         title: "Tecnicatura Universitaria en Programación",
@@ -30,10 +30,10 @@ export default function StudiesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <header className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
-                    Mi Trayectoria
+                    Mi Trayectoria Educativa
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Una línea de tiempo de mi educación y experiencias de aprendizaje clave.
+                    Una línea de tiempo de mi educación y aprendizaje en el mundo del desarrollo.
                 </p>
             </header>
 
@@ -46,12 +46,12 @@ export default function StudiesPage() {
                             <div className="absolute left-4 top-1 -translate-x-1/2 w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center md:left-1/2">
                                 <study.icon className="w-4 h-4 text-primary" />
                             </div>
-                            <div className="md:w-1/2 md:pr-8 md:ml-[50%] md:pl-8 md:text-left data-[side=left]:md:text-right data-[side=left]:md:ml-0 data-[side=left]:md:mr-[50%]" data-side={index % 2 === 0 ? 'left' : 'right'}>
-                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:ml-0 md:mr-[50%] md:text-right' : 'md:pl-8 md:ml-[50%] md:text-left'}`}>
+                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-left">
                                     <CardHeader>
                                         <CardTitle className="text-xl">{study.title}</CardTitle>
                                         <p className="text-muted-foreground">{study.institution}</p>
-                                        <div className="flex items-center text-sm text-muted-foreground pt-2">
+                                        <div className="flex items-center text-sm text-muted-foreground pt-2 ${index % 2 === 0 ? 'md:justify-end' : ''}">
                                             <Calendar className="w-4 h-4 mr-2" />
                                             <span>{study.date}</span>
                                         </div>
