@@ -1,24 +1,27 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, School } from "lucide-react";
+import { Calendar, School, Award } from "lucide-react";
 
 const studies = [
     {
-        title: "Master of Science in Computer Science",
-        institution: "University of Technology",
-        date: "2020 - 2022",
-        description: "Focused on advanced algorithms, machine learning, and distributed systems. Thesis on scalable web architectures."
+        title: "Carrera de Desarrollo Full Stack",
+        institution: "Coderhouse",
+        date: "2021 - 2022",
+        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos SQL y NoSQL.",
+        icon: School
     },
     {
-        title: "Bachelor of Science in Software Engineering",
-        institution: "State College",
-        date: "2016 - 2020",
-        description: "Comprehensive curriculum covering software development lifecycle, database management, and user interface design."
+        title: "Carrera de Desarrollo Backend",
+        institution: "Coderhouse",
+        date: "2022",
+        description: "Especialización en el lado del servidor, con foco en Node.js, arquitectura de software, performance y bases de datos avanzadas.",
+        icon: Award
     },
     {
-        title: "Full-Stack Web Development Bootcamp",
-        institution: "The Code Institute",
-        date: "2015",
-        description: "Intensive training program on modern web technologies including React, Node.js, and MongoDB."
+        title: "Tecnicatura Universitaria en Programación",
+        institution: "Universidad Tecnológica Nacional (UTN)",
+        date: "En curso",
+        description: "Ampliando mis conocimientos formales en ciencias de la computación, algoritmos y estructuras de datos.",
+        icon: School
     },
 ];
 
@@ -27,10 +30,10 @@ export default function StudiesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <header className="text-center mb-16">
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
-                    My Journey
+                    Mi Trayectoria
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    A timeline of my education and key learning experiences.
+                    Una línea de tiempo de mi educación y experiencias de aprendizaje clave.
                 </p>
             </header>
 
@@ -41,7 +44,7 @@ export default function StudiesPage() {
                     {studies.map((study, index) => (
                         <div key={index} className="relative pl-12 md:pl-0">
                             <div className="absolute left-4 top-1 -translate-x-1/2 w-8 h-8 bg-background border-2 border-primary rounded-full flex items-center justify-center md:left-1/2">
-                                <School className="w-4 h-4 text-primary" />
+                                <study.icon className="w-4 h-4 text-primary" />
                             </div>
                             <div className="md:w-1/2 md:pr-8 md:ml-[50%] md:pl-8 md:text-left data-[side=left]:md:text-right data-[side=left]:md:ml-0 data-[side=left]:md:mr-[50%]" data-side={index % 2 === 0 ? 'left' : 'right'}>
                                 <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">

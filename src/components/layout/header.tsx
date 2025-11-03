@@ -9,10 +9,10 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/studies", label: "Studies" },
-  { href: "/projects", label: "Projects" },
-  { href: "/work-in-progress", label: "Work in Progress" },
+  { href: "/", label: "Inicio" },
+  { href: "/studies", label: "Estudios" },
+  { href: "/projects", label: "Proyectos" },
+  { href: "/work-in-progress", label: "En Progreso" },
 ];
 
 export function Header() {

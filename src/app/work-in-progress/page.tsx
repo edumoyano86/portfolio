@@ -10,19 +10,19 @@ import { Progress } from "@/components/ui/progress";
 const wipProjects = [
     {
         id: "wip-1",
-        title: "AI-Powered Itinerary Planner",
-        description: "A smart travel planner that generates personalized itineraries using generative AI. Currently in the backend development phase.",
-        tech: ["Next.js", "Genkit AI", "Firebase", "Google Maps API"],
+        title: "Integración de IA en Portfolio",
+        description: "Explorando la integración de un chatbot o un asistente IA para interactuar con los visitantes y responder preguntas sobre mi perfil.",
+        tech: ["Next.js", "Genkit AI", "TypeScript"],
         github: "#",
-        progress: 40
+        progress: 25
     },
     {
         id: "wip-2",
-        title: "Portfolio v2",
-        description: "Redesigning and rebuilding my personal portfolio with 3D elements and more advanced animations.",
-        tech: ["Next.js", "Three.js", "Framer Motion"],
+        title: "App Móvil con React Native",
+        description: "Aprendiendo y desarrollando una aplicación móvil para expandir mis habilidades más allá del desarrollo web.",
+        tech: ["React Native", "Firebase", "Expo"],
         github: "#",
-        progress: 15
+        progress: 10
     }
 ];
 
@@ -31,10 +31,10 @@ export default function WorkInProgressPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <header className="text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
-                    What I'm Building
+                    Lo que estoy construyendo
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    A peek into my current projects and experiments.
+                    Un vistazo a mis proyectos y experimentos actuales.
                 </p>
             </header>
 
@@ -61,7 +61,7 @@ export default function WorkInProgressPage() {
                                     <p className="text-muted-foreground mb-4">{project.description}</p>
                                     <div className="mb-4">
                                         <div className="flex justify-between items-center mb-2">
-                                            <span className="text-sm font-medium text-muted-foreground">Progress</span>
+                                            <span className="text-sm font-medium text-muted-foreground">Progreso</span>
                                             <span className="text-sm font-bold text-primary">{project.progress}%</span>
                                         </div>
                                         <Progress value={project.progress} className="h-2" />
@@ -75,7 +75,7 @@ export default function WorkInProgressPage() {
                                 <CardFooter className="p-0 pt-6 mt-auto">
                                     <Button variant="outline" asChild className="w-full">
                                         <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                                            <Github className="mr-2"/> Follow on GitHub
+                                            <Github className="mr-2"/> Seguir en GitHub
                                         </Link>
                                     </Button>
                                 </CardFooter>

@@ -1,19 +1,18 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const socialLinks = [
-    { name: "GitHub", icon: Github, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
+    { name: "GitHub", icon: Github, href: "https://github.com/EduMoyano" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/edumoyano86/" },
   ];
 
   return (
     <footer className="bg-secondary/50 mt-auto">
       <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} EduMoyano. All rights reserved.
+          &copy; {new Date().getFullYear()} Eduardo Moyano. Todos los derechos reservados.
         </p>
         <div className="flex items-center gap-2">
           {socialLinks.map((link) => (

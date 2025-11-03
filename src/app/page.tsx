@@ -2,36 +2,37 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink } from "lucide-react";
+import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
 const skills = [
-  { name: "React", icon: Layers },
-  { name: "Next.js", icon: Layers },
-  { name: "TypeScript", icon: Code },
+  { name: "React.js", icon: Layers },
   { name: "Node.js", icon: Code },
-  { name: "Firebase", icon: Database },
+  { name: "JavaScript", icon: Code },
+  { name: "Express.js", icon: Code },
+  { name: "React Native", icon: Smartphone },
+  { name: "SQL/NoSQL", icon: Database },
   { name: "Tailwind CSS", icon: PenTool },
 ];
 
 const featuredProjects = [
   {
     id: "project-1",
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce platform with a modern UI, product management, and payment integration.",
-    tech: ["Next.js", "TypeScript", "Stripe"],
-    github: "#",
-    live: "#"
+    title: "E-commerce App",
+    description: "Una aplicación de e-commerce completamente funcional con carrito de compras, gestión de productos y categorías.",
+    tech: ["React.js", "Firebase", "Tailwind CSS"],
+    github: "https://github.com/EduMoyano/moyano-react-js-pf",
+    live: "https://moyano-react-js-pf.vercel.app/"
   },
   {
     id: "project-2",
-    title: "Task Management App",
-    description: "A collaborative task management tool to help teams stay organized and productive.",
-    tech: ["React", "Firebase", "Tailwind CSS"],
-    github: "#",
-    live: "#"
+    title: "Weather App",
+    description: "Una aplicación del clima que muestra las condiciones actuales y el pronóstico utilizando una API externa.",
+    tech: ["JavaScript", "HTML", "CSS", "API"],
+    github: "https://github.com/EduMoyano/app-clima-js",
+    live: "https://app-clima-js.vercel.app/"
   }
 ];
 
@@ -45,24 +46,24 @@ export default function Home() {
         <div className="flex flex-col items-center">
             {profileImage && (
               <Avatar className="w-32 h-32 mb-6 border-4 border-primary/10 shadow-lg">
-                <AvatarImage src={profileImage.imageUrl} alt="Edu Moyano" data-ai-hint={profileImage.imageHint} />
+                <AvatarImage src={profileImage.imageUrl} alt="Eduardo Moyano" data-ai-hint={profileImage.imageHint} />
                 <AvatarFallback>EM</AvatarFallback>
               </Avatar>
             )}
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
-                Edu Moyano
+                Eduardo Moyano
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
-                A passionate developer creating modern, responsive, and user-friendly web applications. I turn ideas into reality with code.
+                Desarrollador Full Stack con más de 4 años de experiencia, apasionado por crear soluciones de calidad, interfaces intuitivas y un rendimiento óptimo.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
                 <Button asChild size="lg">
                     <Link href="/projects">
-                        View My Work <ArrowRight className="ml-2 h-5 w-5" />
+                        Ver Mis Proyectos <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                    <Link href="/studies">My Journey</Link>
+                    <Link href="/studies">Mi Trayectoria</Link>
                 </Button>
             </div>
         </div>
@@ -71,8 +72,8 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="mb-24 md:mb-32 scroll-mt-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">My Toolbox</h2>
-          <p className="mt-4 text-lg text-muted-foreground">Technologies I love to work with.</p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Mis Herramientas</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Tecnologías con las que me encanta trabajar.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {skills.map((skill) => (
@@ -87,8 +88,8 @@ export default function Home() {
       {/* Featured Projects Section */}
       <section id="projects" className="scroll-mt-20">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Featured Projects</h2>
-          <p className="mt-4 text-lg text-muted-foreground">A glimpse of what I can build.</p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Proyectos Destacados</h2>
+          <p className="mt-4 text-lg text-muted-foreground">Un vistazo de lo que puedo construir.</p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {featuredProjects.map((project) => {
@@ -124,7 +125,7 @@ export default function Home() {
                   </Button>
                   <Button asChild>
                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2"/> Live Demo
+                      <ExternalLink className="mr-2"/> Ver Demo
                     </Link>
                   </Button>
                 </CardFooter>
@@ -134,7 +135,7 @@ export default function Home() {
         </div>
         <div className="text-center mt-12">
           <Button variant="link" asChild className="text-accent-foreground text-lg hover:text-accent-foreground/80">
-            <Link href="/projects">See all projects <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            <Link href="/projects">Ver todos los proyectos <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
         </div>
       </section>
