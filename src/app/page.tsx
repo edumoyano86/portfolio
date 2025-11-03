@@ -38,18 +38,18 @@ const featuredProjects = [
 
 const experience = [
     {
-        role: "Propietario y Emprendedor",
-        company: "J&L Librería y Xime Joyería",
-        period: "2019 - Presente",
-        description: "Gestiono dos emprendimientos, 'Xime Joyería' y 'J&L Librería', manejando la venta directa, online (redes sociales, Mercado Libre) y catálogos digitales. Esta experiencia directa con las necesidades del negocio me inspiró a crear soluciones de software a medida.",
-        icon: Building
-    },
-    {
-        role: "Desarrollador Full Stack",
+        role: "Desarrollador full stack",
         company: "Freelance & Proyectos Propios",
-        period: "2020 - Presente",
+        period: "ene. 2020 - actualidad",
         description: "Desarrollo aplicaciones web completas, como 'Kontalo.com.ar', una plataforma de gestión minorista que nació de mi propia necesidad como comerciante. Mi foco es crear herramientas que sean útiles, eficientes y resuelvan problemas del mundo real.",
         icon: Briefcase
+    },
+    {
+        role: "Propietario",
+        company: "J & L y Xime joyería",
+        period: "ago. 2019 - actualidad",
+        description: "Gestiono dos emprendimientos, 'Xime Joyería' y 'J&L Librería', manejando la venta directa, online (redes sociales, Mercado Libre) y catálogos digitales. Esta experiencia directa con las necesidades del negocio me inspiró a crear soluciones de software a medida.",
+        icon: Building
     }
 ]
 
