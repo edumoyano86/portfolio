@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Award } from "lucide-react";
+import { Calendar, Award, BookOpen } from "lucide-react";
 
 const studies = [
     {
@@ -8,6 +8,13 @@ const studies = [
         date: "2023 - Presente",
         description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos. Actualmente en curso.",
         icon: Award
+    },
+    {
+        title: "Diplomatura en Programación Web Full Stack con React JS",
+        institution: "UTN FRBA - Centro de e-Learning",
+        date: "Mar 2021 - Ago 2021",
+        description: "Diplomatura enfocada en el desarrollo de aplicaciones web modernas utilizando React.js y el ecosistema full stack.",
+        icon: BookOpen
     }
 ];
 
@@ -37,7 +44,7 @@ export default function StudiesPage() {
                                     <CardHeader>
                                         <CardTitle className="text-xl">{study.title}</CardTitle>
                                         <p className="text-muted-foreground">{study.institution}</p>
-                                        <div className="flex items-center text-sm text-muted-foreground pt-2 ${index % 2 === 0 ? 'md:justify-end' : ''}">
+                                        <div className={`flex items-center text-sm text-muted-foreground pt-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
                                             <Calendar className="w-4 h-4 mr-2" />
                                             <span>{study.date}</span>
                                         </div>
