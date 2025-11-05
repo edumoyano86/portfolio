@@ -20,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Send } from "lucide-react";
 import { useFirestore } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { addDocumentNonBlocking } from "@/firebase/non-blocking-updates";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
@@ -43,26 +44,14 @@ export default function ContactPage() {
     async function onSubmit(values: z.infer<typeof formSchema>) {
         if (!firestore) return;
 
-        try {
-            const messagesCollection = collection(firestore, "contact_messages");
-            await addDoc(messagesCollection, {
-                ...values,
-                sentAt: serverTimestamp(),
-            });
-
-            toast({
-                title: "¡Mensaje Enviado!",
-                description: "Gracias por contactarme. Tu mensaje ha sido guardado.",
-            });
-            form.reset();
-        } catch (error) {
-            console.error("Error sending message: ", error);
-            toast({
-                variant: "destructive",
-                title: "Error al enviar",
-                description: "Hubo un problema al guardar tu mensaje. Por favor, inténtalo de nuevo.",
-            });
-        }
+        const messagesCollection = collection(firestore, "contact_messages");
+        addDocumentNonBlocking(messagesCollection, {
+            ...values,
+            sentAt: serverTimestamp(),
+        });
+        
+        // Form is reset, which is visual feedback enough.
+        form.reset();
     }
 
     return (
