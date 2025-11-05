@@ -109,11 +109,10 @@ service cloud.firestore {
     }
 
     /**
-     * @description Rules for contact messages. Anyone can create a message, but listing/getting is not allowed in this prototype.
+     * @description Rules for contact messages. Anyone can create a message.
      * @path /contact_messages/{messageId}
-     * @allow (create) Any signed-in or anonymous user can create a contact message.
-     * @deny (get) No one can read a contact message in this prototype.
-     * @deny (list) No one can list contact messages in this prototype.
+     * @allow (create) Any user (signed-in or anonymous) can create a contact message.
+     * @deny (get, list, update, delete) All other operations are denied to protect privacy.
      * @principle Allows public creation of contact messages, restricts all other access.
      */
     match /contact_messages/{messageId} {

@@ -119,9 +119,9 @@
       "type": "object",
       "description": "Represents a contact message received from a visitor.",
       "properties": {
-        "id": {
+        "name": {
           "type": "string",
-          "description": "Unique identifier for the contact message."
+          "description": "Name of the sender."
         },
         "email": {
           "type": "string",
@@ -139,7 +139,7 @@
         }
       },
       "required": [
-        "id",
+        "name",
         "email",
         "message",
         "sentAt"
