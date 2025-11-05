@@ -54,7 +54,7 @@ const experience = [
 ]
 
 export default function Home() {
-  const profileImage = PlaceHolderImages.find(p => p.id === 'kontalo');
+  const profileImage = PlaceHolderImages.find(p => p.id === 'profile');
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
