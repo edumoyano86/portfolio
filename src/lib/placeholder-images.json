@@ -1,12 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "profile",
-      "description": "A portrait of a developer",
-      "imageUrl": "https://images.unsplash.com/photo-1708426238272-994fcddabca4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwb3J0cmFpdCUyMHBlcnNvbnxlbnwwfHx8fDE3NjEyNjIzOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "portrait person"
-    },
-    {
       "id": "kontalo",
       "description": "Screenshot of a retail management application dashboard",
       "imageUrl": "https://images.unsplash.com/photo-1732194516739-9325055c35de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkYXNoYm9hcmQlMjBhcHB8ZW58MHx8fHwxNzYyMDk3OTQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
