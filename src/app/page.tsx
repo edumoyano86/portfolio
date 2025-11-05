@@ -145,7 +145,7 @@ export default function Home() {
       <section id="services" className="mb-24 md:mb-32 scroll-mt-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Servicios de Consultoría</h2>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">Aprovechando mi experiencia como desarrollador y comerciante, ofrezco soluciones para optimizar tu negocio.</p>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">Mi experiencia construyendo y utilizando Kontalo en mis propios negocios me ha dado un conocimiento profundo sobre los desafíos del comercio minorista. Ofrezco esta experiencia como un servicio para ayudarte a optimizar tu negocio.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {consultingServices.map((service) => (
