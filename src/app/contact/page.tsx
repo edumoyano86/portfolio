@@ -17,9 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Send } from "lucide-react";
-import { useFirestore } from "@/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { addDocumentNonBlocking } from "@/firebase/non-blocking-updates";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
@@ -28,7 +26,7 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
-    const firestore = useFirestore();
+    const { toast } = useToast();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -39,15 +37,18 @@ export default function ContactPage() {
         },
     });
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
-        if (!firestore) return;
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        const subject = encodeURIComponent(`Mensaje de contacto de: ${values.name}`);
+        const body = encodeURIComponent(`${values.message}\n\nDesde el email: ${values.email}`);
+        const mailtoLink = `mailto:cba2486@gmail.com?subject=${subject}&body=${body}`;
 
-        const messagesCollection = collection(firestore, "contact_messages");
-        addDocumentNonBlocking(messagesCollection, {
-            ...values,
-            sentAt: serverTimestamp(),
+        window.location.href = mailtoLink;
+
+        toast({
+            title: "¡Listo para enviar!",
+            description: "Se ha abierto tu aplicación de correo. Por favor, envía el mensaje desde allí.",
         });
-        
+
         form.reset();
     }
 
@@ -66,7 +67,7 @@ export default function ContactPage() {
                 <div className="flex flex-col justify-center">
                     <h2 className="text-3xl font-bold mb-4">Envíame un mensaje</h2>
                     <p className="text-muted-foreground mb-8">
-                        Completa el formulario y me pondré en contacto contigo a la brevedad. También puedes contactarme directamente a mi correo.
+                        Completa el formulario para abrir tu cliente de correo y enviarme un mensaje directamente. También puedes contactarme a mi correo.
                     </p>
                      <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50">
                         <Mail className="w-6 h-6 text-primary"/>
@@ -98,7 +99,7 @@ export default function ContactPage() {
                                     name="email"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Email</FormLabel>
+                                            <FormLabel>Email de Contacto</FormLabel>
                                             <FormControl>
                                                 <Input placeholder="tu@email.com" {...field} />
                                             </FormControl>
@@ -124,7 +125,7 @@ export default function ContactPage() {
                                     )}
                                 />
                                 <Button type="submit" className="w-full" size="lg">
-                                    Enviar Mensaje <Send className="ml-2 w-4 h-4"/>
+                                    Abrir Email <Send className="ml-2 w-4 h-4"/>
                                 </Button>
                             </form>
                         </Form>
