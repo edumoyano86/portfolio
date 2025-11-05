@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                         return (
                             <Card key={project.id} className="overflow-hidden group flex flex-col transition-all duration-300 ease-in-out hover:border-primary/50 hover:shadow-primary/20 hover:shadow-lg">
                                {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
-                                  <Carousel className="w-full relative">
+                                  <Carousel className="w-full relative bg-muted/20">
                                     <CarouselContent>
                                       {projectImage.imageUrls.map((url, index) => (
                                         <CarouselItem key={index}>
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
                                                         alt={`${project.title} - Imagen ${index + 1}`}
                                                         width={600}
                                                         height={400}
-                                                        className="w-full h-80 object-contain bg-muted/20 cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
+                                                        className="w-full h-80 object-contain cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
                                                         data-ai-hint={projectImage.imageHint}
                                                     />
                                                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">

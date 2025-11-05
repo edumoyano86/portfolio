@@ -3,7 +3,7 @@ import data from './placeholder-images.json';
 export type ImagePlaceholder = {
   id: string;
   description: string;
-  imageUrls: string[]; // Changed from imageUrl to imageUrls
+  imageUrls: string[];
   imageHint: string;
 };
 
