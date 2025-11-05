@@ -4,17 +4,17 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, message } = await request.json();
+    const { name, email, subject, message } = await request.json();
 
     // Validar que los datos necesarios están presentes
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json({ error: 'Faltan datos en el formulario.' }, { status: 400 });
     }
     
     // IMPORTANT: Use an App Password for Gmail, not your regular password.
     // Set these environment variables in your hosting provider.
-    const user = process.env.EMAIL_USER;
-    const pass = process.env.EMAIL_PASS;
+    const user = process.env.EMAIL_USER || 'cba2486@gmail.com';
+    const pass = process.env.EMAIL_PASS || 'dxgz aosz ikzq onlg';
     const recipientEmail = process.env.RECIPIENT_EMAIL || 'cba2486@gmail.com';
 
     if (!user || !pass) {
@@ -36,11 +36,12 @@ export async function POST(request: Request) {
       from: `"${name}" <${user}>`, // Sender address (shows your name and verified email)
       replyTo: email, // Set the 'reply-to' field to the sender's email
       to: recipientEmail, // List of receivers (your email)
-      subject: `Nuevo mensaje de contacto de ${name} desde tu Portfolio`, // Subject line
+      subject: `Nuevo mensaje de ${name}: ${subject}`, // Subject line
       html: `
         <h1>Nuevo mensaje desde el Portfolio</h1>
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Asunto:</strong> ${subject}</p>
         <hr />
         <h2>Mensaje:</h2>
         <p>${message}</p>

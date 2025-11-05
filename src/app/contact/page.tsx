@@ -23,6 +23,7 @@ import { useState } from "react";
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
   email: z.string().email({ message: "Por favor, introduce un email válido." }),
+  subject: z.string().min(5, { message: "El asunto debe tener al menos 5 caracteres." }),
   message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
 });
 
@@ -35,6 +36,7 @@ export default function ContactPage() {
         defaultValues: {
             name: "",
             email: "",
+            subject: "",
             message: "",
         },
     });
@@ -122,6 +124,19 @@ export default function ContactPage() {
                                             <FormLabel>Email de Contacto</FormLabel>
                                             <FormControl>
                                                 <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
+                                    name="subject"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Asunto</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="Asunto del mensaje" {...field} disabled={isSubmitting} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
