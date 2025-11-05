@@ -1,14 +1,14 @@
 <?xml version="1.0" standalone="no"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
- width="195.000000pt" height="180.000000pt" viewBox="0 0 1950 1800"
+ width="48" height="48" viewBox="0 0 1950 1800"
  preserveAspectRatio="xMidYMid meet">
-  <defs>
+<defs>
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:hsl(180, 80%, 70%);stop-opacity:1" />
-      <stop offset="100%" style="stop-color:hsl(320, 80%, 70%);stop-opacity:1" />
+      <stop offset="0%" style="stop-color:hsl(173 95% 45%);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:hsl(217 91% 60%);stop-opacity:1" />
     </linearGradient>
-  </defs>
-<g transform="translate(0.000000,1800.000000) scale(0.100000,-0.100000)"
+</defs>
+<g transform="translate(0.000000,1800.000000) scale(1,-1)"
 fill="url(#logoGradient)" stroke="none">
 <path d="M0 900 l0 -900 975 0 975 0 0 900 0 900 -975 0 -975 0 0 -900z m1094
 461 c-2 -3 -33 23 -67 57 l-63 62 -64 -65 -64 -65 272 0 272 0 0 -134 0 -134
