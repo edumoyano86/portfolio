@@ -16,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { useToast } from "@/hooks/use-toast";
 import { Mail, Send } from "lucide-react";
 import { useFirestore } from "@/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
@@ -29,7 +28,6 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
-    const { toast } = useToast();
     const firestore = useFirestore();
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -50,7 +48,6 @@ export default function ContactPage() {
             sentAt: serverTimestamp(),
         });
         
-        // Form is reset, which is visual feedback enough.
         form.reset();
     }
 
@@ -69,7 +66,7 @@ export default function ContactPage() {
                 <div className="flex flex-col justify-center">
                     <h2 className="text-3xl font-bold mb-4">Envíame un mensaje</h2>
                     <p className="text-muted-foreground mb-8">
-                        Completa el formulario y me pondré en contacto contigo a la brevedad. Tu mensaje se guardará de forma segura.
+                        Completa el formulario y me pondré en contacto contigo a la brevedad. También puedes encontrarme en mis redes sociales.
                     </p>
                      <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50">
                         <Mail className="w-6 h-6 text-primary"/>
