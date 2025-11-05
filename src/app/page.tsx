@@ -1,5 +1,5 @@
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone, Briefcase, Building } from "lucide-react";
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-              <Image src="/profile.jpeg" alt="Eduardo Moyano" width={128} height={128} className="rounded-full" />
+              <Image src="/profile.jpeg" alt="Eduardo Moyano" width={128} height={128} className="rounded-full object-cover" />
               <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
@@ -149,7 +149,7 @@ export default function Home() {
                             alt={`${project.title} - Imagen ${index + 1}`}
                             width={600}
                             height={400}
-                            className="w-full h-48 object-cover"
+                            className="w-full h-80 object-cover"
                             data-ai-hint={projectImage.imageHint}
                           />
                         </CarouselItem>
@@ -164,7 +164,7 @@ export default function Home() {
                     alt={project.title}
                     width={600}
                     height={400}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-80 object-cover"
                     data-ai-hint={projectImage.imageHint}
                   />
                 )}
