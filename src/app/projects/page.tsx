@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState } from "react";
-import { Separator } from "@/components/ui/separator";
 
 const projects = [
     {
@@ -21,27 +20,11 @@ const projects = [
         live: "https://kontalo.com.ar"
     },
     {
-        id: "project-1",
-        title: "Tienda Online de E-commerce",
-        description: "Una aplicación de e-commerce completamente funcional construida con React. La plataforma incluye características esenciales como un carrito de compras interactivo, navegación por categorías de productos y una interfaz de usuario clara para la gestión de productos. Se utilizó Firebase como backend para la base de datos de productos y la autenticación de usuarios, y Context API de React para una gestión de estado global eficiente.",
-        tech: ["React.js", "Firebase", "Context API", "Tailwind CSS"],
-        github: "https://github.com/EduMoyano/moyano-react-js-pf",
-        live: "https://moyano-react-js-pf.vercel.app/"
-    },
-    {
-        id: "project-2",
-        title: "Aplicación del Clima",
-        description: "Una aplicación web ligera y rápida que proporciona información meteorológica en tiempo real. Los usuarios pueden buscar cualquier ciudad del mundo y obtener las condiciones climáticas actuales, así como un pronóstico simple. El proyecto fue construido con JavaScript puro y consume datos de la API de OpenWeatherMap. Es un ejemplo de manipulación del DOM y consumo de APIs externas.",
-        tech: ["JavaScript (ES6+)", "HTML5", "CSS3", "API Rest"],
-        github: "https://github.com/EduMoyano/app-clima-js",
-        live: "https://app-clima-js.vercel.app/"
-    },
-    {
-        id: "project-3",
-        title: "Backend para E-commerce",
-        description: "El motor detrás de una tienda online, desarrollado íntegramente en Node.js y Express. Este backend implementa una arquitectura por capas para una mejor organización y escalabilidad, utiliza DTOs (Data Transfer Objects) para la validación de datos y se conecta a una base de datos MongoDB para la persistencia. Aunque no tiene una demo 'en vivo' (ya que es un servidor), el código demuestra mi habilidad para construir APIs RESTful robustas.",
-        tech: ["Node.js", "Express", "MongoDB", "Handlebars", "Arquitectura de Capas"],
-        github: "https://github.com/EduMoyano/backend-moyano",
+        id: "wip-1",
+        title: "Portfolio Personal",
+        description: "Este mismo portfolio, diseñado para mostrar mis habilidades y proyectos. Fue construido desde cero utilizando Next.js, TypeScript y Tailwind CSS, con componentes de Shadcn UI para una interfaz limpia y moderna. El objetivo es que sea una carta de presentación interactiva y un reflejo de mi trabajo. ¡Siempre en constante mejora!",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        github: "#",
         live: "#"
     },
 ];
@@ -62,7 +45,7 @@ export default function ProjectsPage() {
                 </header>
 
                 <div className="space-y-24">
-                    {projects.map((project, index) => {
+                    {projects.map((project) => {
                         const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                         const imageUrl = projectImage?.imageUrls?.[0];
 
@@ -76,7 +59,7 @@ export default function ProjectsPage() {
                                                 alt={project.title}
                                                 width={1200}
                                                 height={800}
-                                                className="rounded-lg object-contain w-full h-auto bg-muted/20 border border-border/50 transition-transform duration-300 group-hover/item:scale-105"
+                                                className="rounded-lg object-cover w-full h-auto bg-muted/20 border border-border/50 transition-transform duration-300 group-hover/item:scale-105"
                                                 data-ai-hint={projectImage?.imageHint}
                                             />
                                         )}
@@ -116,6 +99,7 @@ export default function ProjectsPage() {
             <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none">
                 <DialogHeader>
                     <DialogTitle className="sr-only">Imagen Ampliada del Proyecto</DialogTitle>
+
                     <DialogDescription className="sr-only">
                         Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
                     </DialogDescription>
