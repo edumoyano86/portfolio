@@ -5,6 +5,7 @@ import { Github, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const projects = [
     {
@@ -66,15 +67,34 @@ export default function ProjectsPage() {
                     const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                     return (
                         <Card key={project.id} className="overflow-hidden flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
-                            {projectImage && (
-                            <Image
-                                src={projectImage.imageUrl}
+                           {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
+                              <Carousel className="w-full relative">
+                                <CarouselContent>
+                                  {projectImage.imageUrls.map((url, index) => (
+                                    <CarouselItem key={index}>
+                                      <Image
+                                        src={url}
+                                        alt={`${project.title} - Imagen ${index + 1}`}
+                                        width={600}
+                                        height={400}
+                                        className="w-full h-56 object-cover"
+                                        data-ai-hint={projectImage.imageHint}
+                                      />
+                                    </CarouselItem>
+                                  ))}
+                                </CarouselContent>
+                                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2" />
+                                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2" />
+                              </Carousel>
+                            ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
+                              <Image
+                                src={projectImage.imageUrls[0]}
                                 alt={project.title}
                                 width={600}
                                 height={400}
                                 className="w-full h-56 object-cover"
                                 data-ai-hint={projectImage.imageHint}
-                            />
+                              />
                             )}
                             <div className="flex flex-col flex-grow">
                                 <CardHeader>

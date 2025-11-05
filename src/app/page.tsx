@@ -6,6 +6,7 @@ import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smar
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const skills = [
   { name: "React.js", icon: Layers },
@@ -54,7 +55,6 @@ const experience = [
 ]
 
 export default function Home() {
-  const profileImage = PlaceHolderImages.find(p => p.id === 'profile');
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-              <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" />
+              <Image src="/profile.jpeg" alt="Eduardo Moyano" width={128} height={128} className="rounded-full" />
               <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
@@ -139,9 +139,28 @@ export default function Home() {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
               <Card key={project.id} className="overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
-                {projectImage && (
+                {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {projectImage.imageUrls.map((url, index) => (
+                        <CarouselItem key={index}>
+                          <Image
+                            src={url}
+                            alt={`${project.title} - Imagen ${index + 1}`}
+                            width={600}
+                            height={400}
+                            className="w-full h-48 object-cover"
+                            data-ai-hint={projectImage.imageHint}
+                          />
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-4" />
+                    <CarouselNext className="right-4" />
+                  </Carousel>
+                ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
                   <Image
-                    src={projectImage.imageUrl}
+                    src={projectImage.imageUrls[0]}
                     alt={project.title}
                     width={600}
                     height={400}
