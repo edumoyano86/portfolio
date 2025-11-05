@@ -1,6 +1,5 @@
 "use client";
 
-import type {Metadata} from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <head>
-        <link rel="icon" href="/logo.jpeg" type="image/jpeg" />
+        <link rel="icon" href="/logo.jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
