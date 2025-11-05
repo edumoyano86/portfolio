@@ -54,6 +54,7 @@ const experience = [
 ]
 
 export default function Home() {
+  const profileImage = PlaceHolderImages.find(p => p.id === 'kontalo');
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -61,7 +62,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-              <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" />
+              <AvatarImage src={profileImage?.imageUrl} alt="Eduardo Moyano" />
               <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">

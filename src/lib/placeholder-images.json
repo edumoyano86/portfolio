@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "kontalo",
-      "description": "Screenshot of a retail management application dashboard",
-      "imageUrl": "https://images.unsplash.com/photo-1732194516739-9325055c35de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkYXNoYm9hcmQlMjBhcHB8ZW58MHx8fHwxNzYyMDk3OTQ1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "dashboard app"
+      "description": "A portrait of a software developer.",
+      "imageUrl": "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXZlbG9wZXIlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjIyOTU3ODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer portrait"
     },
     {
       "id": "project-1",
