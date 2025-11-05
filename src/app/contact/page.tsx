@@ -66,12 +66,12 @@ export default function ContactPage() {
                 <div className="flex flex-col justify-center">
                     <h2 className="text-3xl font-bold mb-4">Envíame un mensaje</h2>
                     <p className="text-muted-foreground mb-8">
-                        Completa el formulario y me pondré en contacto contigo a la brevedad. También puedes encontrarme en mis redes sociales.
+                        Completa el formulario y me pondré en contacto contigo a la brevedad. También puedes contactarme directamente a mi correo.
                     </p>
                      <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50">
                         <Mail className="w-6 h-6 text-primary"/>
-                        <a href="mailto:edumoyano86@gmail.com" className="text-lg text-foreground hover:text-primary transition-colors">
-                            edumoyano86@gmail.com
+                        <a href="mailto:tu-email-de-firebase@ejemplo.com" className="text-lg text-foreground hover:text-primary transition-colors">
+                            tu-email-de-firebase@ejemplo.com
                         </a>
                     </div>
                 </div>
