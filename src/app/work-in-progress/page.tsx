@@ -16,18 +16,10 @@ const wipProjects = [
     {
         id: "wip-1",
         title: "Integración de IA en Portfolio",
-        description: "Explorando la integración de un chatbot o un asistente IA para interactuar con los visitantes y responder preguntas sobre mi perfil.",
+        description: "Explorando la integración de un chatbot o un asistente IA para interactuar con los visitantes y responder preguntas sobre mi perfil. Este proyecto representa la evolución constante del portfolio.",
         tech: ["Next.js", "Genkit AI", "TypeScript"],
         github: "#",
-        progress: 25
-    },
-    {
-        id: "wip-2",
-        title: "App Móvil con React Native",
-        description: "Aprendiendo y desarrollando una aplicación móvil para expandir mis habilidades más allá del desarrollo web.",
-        tech: ["React Native", "Firebase", "Expo"],
-        github: "#",
-        progress: 10
+        progress: 35
     }
 ];
 
@@ -46,7 +38,7 @@ export default function WorkInProgressPage() {
                     </p>
                 </header>
 
-                <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="grid md:grid-cols-1 max-w-2xl mx-auto gap-8 lg:gap-12">
                     {wipProjects.map((project) => {
                         const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                         return (

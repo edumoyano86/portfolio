@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -40,7 +41,7 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <div className="flex items-center flex-1">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/logo.svg" alt="Logo de EduMoyano" width={36} height={36} className="h-9 w-9"/>
+            <Image src="/logo.jpeg" alt="Logo de EduMoyano" width={36} height={36} className="h-9 w-9 rounded-md object-cover"/>
             <span className="font-bold sm:inline-block font-headline">
               EduMoyano
             </span>
@@ -67,7 +68,7 @@ export function Header() {
             <SheetContent side="right" className="w-[300px]">
               <div className="flex flex-col items-start p-6">
                 <Link href="/" onClick={() => setIsSheetOpen(false)} className="mb-8 flex items-center space-x-2">
-                   <Image src="/logo.svg" alt="Logo de EduMoyano" width={36} height={36} className="h-9 w-9"/>
+                   <Image src="/logo.jpeg" alt="Logo de EduMoyano" width={36} height={36} className="h-9 w-9 rounded-md object-cover"/>
                   <span className="font-bold font-headline">EduMoyano</span>
                 </Link>
                 <nav className="flex flex-col gap-6 text-lg font-medium">
