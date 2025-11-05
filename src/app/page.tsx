@@ -67,18 +67,18 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
-            <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-                <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" className="object-cover" />
-                <AvatarFallback>EM</AvatarFallback>
+            <Avatar className="w-36 h-36 mb-6 border-4 border-primary/30 shadow-lg shadow-primary/20">
+              <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" className="object-cover"/>
+              <AvatarFallback>EM</AvatarFallback>
             </Avatar>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
                 Eduardo Moyano
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/80 mb-8">
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
                 Desarrollador Full Stack y Emprendedor. Convierto problemas de negocio en soluciones de software robustas, aplicando mi experiencia directa como comerciante.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">
                     <Link href="/projects">
                         Ver Mis Proyectos <ArrowRight className="ml-2 h-5 w-5" />
                     </Link>
@@ -92,16 +92,16 @@ export default function Home() {
 
       {/* Experience Section */}
       <section id="experience" className="mb-24 md:mb-32 scroll-mt-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Experiencia</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Experiencia</h2>
           <p className="mt-4 text-lg text-muted-foreground">Mi viaje profesional y empresarial.</p>
         </div>
         <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
           {experience.map((exp) => (
-            <Card key={exp.role} className="flex flex-col text-left">
+            <Card key={exp.role} className="flex flex-col text-left bg-card/50 border-border/50 hover:border-primary/50 transition-colors duration-300">
               <CardHeader>
                 <div className="flex items-start gap-4">
-                    <div className="p-2 bg-primary/10 rounded-full">
+                    <div className="p-3 bg-primary/10 rounded-full border border-primary/20">
                         <exp.icon className="h-6 w-6 text-primary"/>
                     </div>
                     <div>
@@ -120,13 +120,13 @@ export default function Home() {
 
       {/* Skills Section */}
       <section id="skills" className="mb-24 md:mb-32 scroll-mt-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Mis Herramientas</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Mis Herramientas</h2>
           <p className="mt-4 text-lg text-muted-foreground">Tecnologías con las que construyo soluciones.</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {skills.map((skill) => (
-            <Badge key={skill.name} variant="secondary" className="px-6 py-3 text-lg transition-transform hover:scale-105 hover:bg-accent hover:text-accent-foreground cursor-default">
+            <Badge key={skill.name} variant="outline" className="px-6 py-3 text-lg border-accent/30 text-accent/80 transition-all hover:scale-105 hover:bg-accent/10 hover:text-accent hover:border-accent/80 cursor-default">
               <skill.icon className="mr-2 h-5 w-5" />
               {skill.name}
             </Badge>
@@ -136,8 +136,8 @@ export default function Home() {
 
       {/* Featured Projects Section */}
       <section id="projects" className="scroll-mt-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Proyectos Destacados</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Proyectos Destacados</h2>
           <p className="mt-4 text-lg text-muted-foreground">Un vistazo de lo que puedo construir.</p>
         </div>
         <Dialog>
@@ -145,23 +145,23 @@ export default function Home() {
             {featuredProjects.map((project) => {
                 const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                 return (
-                <Card key={project.id} className="overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+                <Card key={project.id} className="overflow-hidden group transition-all duration-300 ease-in-out hover:border-primary/50 hover:shadow-primary/20 hover:shadow-lg">
                     {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
                     <Carousel className="w-full bg-muted/20">
                         <CarouselContent>
                         {projectImage.imageUrls.map((url, index) => (
                             <CarouselItem key={index}>
                                 <DialogTrigger asChild onClick={() => setSelectedImg(url)}>
-                                    <div className="relative group">
+                                    <div className="relative group/item">
                                         <Image
                                             src={url}
                                             alt={`${project.title} - Imagen ${index + 1}`}
                                             width={600}
                                             height={400}
-                                            className="w-full h-80 object-contain cursor-pointer"
+                                            className="w-full h-80 object-contain cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
                                             data-ai-hint={projectImage.imageHint}
                                         />
-                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                                             <Expand className="w-12 h-12 text-white" />
                                         </div>
                                     </div>
@@ -174,16 +174,16 @@ export default function Home() {
                     </Carousel>
                     ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
                         <DialogTrigger asChild onClick={() => setSelectedImg(projectImage.imageUrls[0])}>
-                            <div className="relative group">
+                            <div className="relative group/item">
                                 <Image
                                     src={projectImage.imageUrls[0]}
                                     alt={project.title}
                                     width={600}
                                     height={400}
-                                    className="w-full h-80 object-contain bg-muted/20 cursor-pointer"
+                                    className="w-full h-80 object-contain bg-muted/20 cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
                                     data-ai-hint={projectImage.imageHint}
                                 />
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                                     <Expand className="w-12 h-12 text-white" />
                                 </div>
                             </div>
@@ -196,7 +196,7 @@ export default function Home() {
                     <p className="text-muted-foreground mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                         {project.tech.map(tech => (
-                        <Badge key={tech} variant="outline">{tech}</Badge>
+                        <Badge key={tech} variant="secondary">{tech}</Badge>
                         ))}
                     </div>
                     </CardContent>
@@ -234,7 +234,7 @@ export default function Home() {
             </DialogContent>
         </Dialog>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Button variant="link" asChild className="text-lg">
             <Link href="/projects">Ver todos los proyectos <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>

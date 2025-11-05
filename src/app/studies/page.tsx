@@ -22,7 +22,7 @@ export default function StudiesPage() {
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <header className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
                     Mi Trayectoria Educativa
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -31,7 +31,7 @@ export default function StudiesPage() {
             </header>
 
             <div className="relative max-w-3xl mx-auto">
-                <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-border -translate-x-1/2" aria-hidden="true" />
+                <div className="absolute left-4 md:left-1/2 top-0 h-full w-0.5 bg-border/50 -translate-x-1/2" aria-hidden="true" />
 
                 <div className="space-y-12">
                     {studies.map((study, index) => (
@@ -40,7 +40,7 @@ export default function StudiesPage() {
                                 <study.icon className="w-4 h-4 text-primary" />
                             </div>
                             <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:ml-0 md:mr-[50%] md:text-right' : 'md:pl-8 md:ml-[50%] md:text-left'}`}>
-                                <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-left">
+                                <Card className="shadow-lg hover:shadow-xl hover:shadow-primary/20 hover:border-primary/50 transition-all duration-300 text-left bg-card/50 border-border/50">
                                     <CardHeader>
                                         <CardTitle className="text-xl">{study.title}</CardTitle>
                                         <p className="text-muted-foreground">{study.institution}</p>
@@ -50,7 +50,7 @@ export default function StudiesPage() {
                                         </div>
                                     </CardHeader>
                                     <CardContent>
-                                        <p>{study.description}</p>
+                                        <p className="text-foreground/80">{study.description}</p>
                                     </CardContent>
                                 </Card>
                             </div>

@@ -9,7 +9,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary/50 mt-auto">
+    <footer className="bg-background border-t border-border/40 mt-auto">
       <div className="container py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Eduardo Moyano. Todos los derechos reservados.
@@ -24,7 +24,7 @@ export function Footer() {
               aria-label={link.name}
             >
               <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                <link.icon className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+                <link.icon className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
               </Link>
             </Button>
           ))}

@@ -62,8 +62,8 @@ export default function ProjectsPage() {
     return (
         <Dialog>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <header className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
+                <header className="text-center mb-16">
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
                         Mis Proyectos
                     </h1>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -75,23 +75,23 @@ export default function ProjectsPage() {
                     {projects.map((project) => {
                         const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                         return (
-                            <Card key={project.id} className="overflow-hidden flex flex-col transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+                            <Card key={project.id} className="overflow-hidden group flex flex-col transition-all duration-300 ease-in-out hover:border-primary/50 hover:shadow-primary/20 hover:shadow-lg">
                                {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
                                   <Carousel className="w-full relative">
                                     <CarouselContent>
                                       {projectImage.imageUrls.map((url, index) => (
                                         <CarouselItem key={index}>
                                            <DialogTrigger asChild onClick={() => setSelectedImg(url)}>
-                                                <div className="relative group">
+                                                <div className="relative group/item">
                                                     <Image
                                                         src={url}
                                                         alt={`${project.title} - Imagen ${index + 1}`}
                                                         width={600}
                                                         height={400}
-                                                        className="w-full h-64 object-contain bg-muted/20 cursor-pointer"
+                                                        className="w-full h-80 object-contain bg-muted/20 cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
                                                         data-ai-hint={projectImage.imageHint}
                                                     />
-                                                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                                                         <Expand className="w-12 h-12 text-white" />
                                                     </div>
                                                 </div>
@@ -104,16 +104,16 @@ export default function ProjectsPage() {
                                   </Carousel>
                                 ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
                                      <DialogTrigger asChild onClick={() => setSelectedImg(projectImage.imageUrls[0])}>
-                                        <div className="relative group">
+                                        <div className="relative group/item">
                                             <Image
                                                 src={projectImage.imageUrls[0]}
                                                 alt={project.title}
                                                 width={600}
                                                 height={400}
-                                                className="w-full h-64 object-contain bg-muted/20 cursor-pointer"
+                                                className="w-full h-80 object-contain bg-muted/20 cursor-pointer transition-transform duration-300 group-hover/item:scale-105"
                                                 data-ai-hint={projectImage.imageHint}
                                             />
-                                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
                                                 <Expand className="w-12 h-12 text-white" />
                                             </div>
                                         </div>
@@ -168,4 +168,3 @@ export default function ProjectsPage() {
         </Dialog>
     );
 }
-
