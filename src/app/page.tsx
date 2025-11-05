@@ -33,12 +33,12 @@ const featuredProjects = [
         live: "https://kontalo.com.ar"
     },
     {
-        id: "project-1",
-        title: "E-commerce App",
-        description: "Una aplicación de e-commerce completamente funcional con carrito de compras, gestión de productos y categorías.",
-        tech: ["React.js", "Firebase", "Tailwind CSS"],
-        github: "https://github.com/EduMoyano/moyano-react-js-pf",
-        live: "https://moyano-react-js-pf.vercel.app/"
+        id: "wip-1",
+        title: "Portfolio Personal",
+        description: "Este mismo portfolio, diseñado para mostrar mis habilidades y proyectos. ¡Siempre en constante mejora!",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
+        github: "#",
+        live: "#"
     }
 ];
 
