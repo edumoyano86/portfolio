@@ -6,6 +6,7 @@ import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smar
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
+import profileImage from "@/assets/profile.jpeg";
 
 const skills = [
   { name: "React.js", icon: Layers },
@@ -61,7 +62,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-              <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" />
+              <AvatarImage src={profileImage.src} alt="Eduardo Moyano" />
               <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
