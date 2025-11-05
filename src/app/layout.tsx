@@ -1,14 +1,11 @@
+"use client";
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { FirebaseClientProvider } from '@/firebase';
-
-export const metadata: Metadata = {
-  title: 'EduMoyano Portfolio',
-  description: 'Personal portfolio of Edu Moyano',
-};
 
 export default function RootLayout({
   children,
