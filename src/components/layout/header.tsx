@@ -40,7 +40,7 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <div className="flex items-center flex-1">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/logo.svg" alt="Logo de EduMoyano" width={40} height={40} className="h-10 w-10"/>
+            <Image src="/logo.svg" alt="Logo de EduMoyano" width={32} height={32} className="h-8 w-8"/>
             <span className="font-bold sm:inline-block font-headline">
               EduMoyano
             </span>
