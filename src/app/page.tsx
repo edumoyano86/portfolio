@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Dialog, DialogContent, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
 const skills = [
   { name: "React.js", icon: Layers },
@@ -207,6 +207,12 @@ export default function Home() {
             })}
             </div>
             <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none">
+                <DialogHeader>
+                    <DialogTitle className="sr-only">Imagen Ampliada del Proyecto</DialogTitle>
+                    <DialogDescription className="sr-only">
+                        Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
+                    </DialogDescription>
+                </DialogHeader>
                 {selectedImg && (
                     <div className="relative">
                         <Image src={selectedImg} alt="Imagen ampliada" width={1200} height={800} className="w-full h-full object-contain rounded-lg shadow-2xl" />
@@ -227,5 +233,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
