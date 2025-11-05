@@ -3,10 +3,10 @@
 
 import { useState } from "react";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone, Briefcase, Building, X } from "lucide-react";
+import { ArrowRight, Code, Database, Layers, PenTool, Github, ExternalLink, Smartphone, Briefcase, Building, X, Expand } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
@@ -68,7 +68,7 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-                <Image src="/profile.jpeg" alt="Eduardo Moyano" width={128} height={128} className="rounded-full object-cover" />
+                <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" className="object-cover" />
                 <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
@@ -152,14 +152,19 @@ export default function Home() {
                         {projectImage.imageUrls.map((url, index) => (
                             <CarouselItem key={index}>
                                 <DialogTrigger asChild onClick={() => setSelectedImg(url)}>
-                                    <Image
-                                        src={url}
-                                        alt={`${project.title} - Imagen ${index + 1}`}
-                                        width={600}
-                                        height={400}
-                                        className="w-full h-80 object-contain cursor-pointer"
-                                        data-ai-hint={projectImage.imageHint}
-                                    />
+                                    <div className="relative group">
+                                        <Image
+                                            src={url}
+                                            alt={`${project.title} - Imagen ${index + 1}`}
+                                            width={600}
+                                            height={400}
+                                            className="w-full h-80 object-contain cursor-pointer"
+                                            data-ai-hint={projectImage.imageHint}
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                            <Expand className="w-12 h-12 text-white" />
+                                        </div>
+                                    </div>
                                 </DialogTrigger>
                             </CarouselItem>
                         ))}
@@ -169,14 +174,19 @@ export default function Home() {
                     </Carousel>
                     ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
                         <DialogTrigger asChild onClick={() => setSelectedImg(projectImage.imageUrls[0])}>
-                            <Image
-                                src={projectImage.imageUrls[0]}
-                                alt={project.title}
-                                width={600}
-                                height={400}
-                                className="w-full h-80 object-contain bg-muted/20 cursor-pointer"
-                                data-ai-hint={projectImage.imageHint}
-                            />
+                            <div className="relative group">
+                                <Image
+                                    src={projectImage.imageUrls[0]}
+                                    alt={project.title}
+                                    width={600}
+                                    height={400}
+                                    className="w-full h-80 object-contain bg-muted/20 cursor-pointer"
+                                    data-ai-hint={projectImage.imageHint}
+                                />
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <Expand className="w-12 h-12 text-white" />
+                                </div>
+                            </div>
                         </DialogTrigger>
                     )}
                     <CardHeader>
