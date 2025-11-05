@@ -70,8 +70,8 @@ export default function ContactPage() {
                     </p>
                      <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50">
                         <Mail className="w-6 h-6 text-primary"/>
-                        <a href="mailto:tu-email-de-firebase@ejemplo.com" className="text-lg text-foreground hover:text-primary transition-colors">
-                            tu-email-de-firebase@ejemplo.com
+                        <a href="mailto:cba2486@gmail.com" className="text-lg text-foreground hover:text-primary transition-colors">
+                            cba2486@gmail.com
                         </a>
                     </div>
                 </div>
