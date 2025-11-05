@@ -1,0 +1,236 @@
+{
+  "entities": {
+    "Study": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Study",
+      "type": "object",
+      "description": "Represents an academic study or educational attainment.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the study entry."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the degree, certification, or course."
+        },
+        "institution": {
+          "type": "string",
+          "description": "Name of the educational institution."
+        },
+        "startDate": {
+          "type": "string",
+          "description": "Start date of the study period.",
+          "format": "date-time"
+        },
+        "endDate": {
+          "type": "string",
+          "description": "End date of the study period (or expected end date).",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the studies or coursework."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "institution",
+        "startDate",
+        "endDate",
+        "description"
+      ]
+    },
+    "Project": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Project",
+      "type": "object",
+      "description": "Represents a project undertaken by the portfolio owner.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the project."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the project."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the project and its goals."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of an image representing the project.",
+          "format": "uri"
+        },
+        "demoUrl": {
+          "type": "string",
+          "description": "URL to a live demo of the project.",
+          "format": "uri"
+        },
+        "repositoryUrl": {
+          "type": "string",
+          "description": "URL to the project's code repository.",
+          "format": "uri"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the project (e.g., completed, in progress)."
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "description",
+        "imageUrl",
+        "status"
+      ]
+    },
+    "Skill": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Skill",
+      "type": "object",
+      "description": "Represents a skill, technology, or framework.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the skill."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the skill or technology."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the skill and proficiency level."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description"
+      ]
+    },
+    "ContactMessage": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactMessage",
+      "type": "object",
+      "description": "Represents a contact message received from a visitor.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact message."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the sender.",
+          "format": "email"
+        },
+        "message": {
+          "type": "string",
+          "description": "The content of the message."
+        },
+        "sentAt": {
+          "type": "string",
+          "description": "Timestamp indicating when the message was sent.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "message",
+        "sentAt"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}/studies/{studyId}",
+        "definition": {
+          "entityName": "Study",
+          "schema": {
+            "$ref": "#/backend/entities/Study"
+          },
+          "description": "Stores study information for a specific user. Uses path-based ownership for simple security rules.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The ID of the user who owns the study."
+            },
+            {
+              "name": "studyId",
+              "description": "The ID of the study document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/projects/{projectId}",
+        "definition": {
+          "entityName": "Project",
+          "schema": {
+            "$ref": "#/backend/entities/Project"
+          },
+          "description": "Stores project information for a specific user. Uses path-based ownership for simple security rules.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The ID of the user who owns the project."
+            },
+            {
+              "name": "projectId",
+              "description": "The ID of the project document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/skills/{skillId}",
+        "definition": {
+          "entityName": "Skill",
+          "schema": {
+            "$ref": "#/backend/entities/Skill"
+          },
+          "description": "Stores skill information for a specific user. Uses path-based ownership for simple security rules.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The ID of the user who owns the skill."
+            },
+            {
+              "name": "skillId",
+              "description": "The ID of the skill document."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/contact_messages/{messageId}",
+        "definition": {
+          "entityName": "ContactMessage",
+          "schema": {
+            "$ref": "#/backend/entities/ContactMessage"
+          },
+          "description": "Stores contact messages received from visitors.",
+          "params": [
+            {
+              "name": "messageId",
+              "description": "The ID of the contact message."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore data structure is designed to support the EduMoyano portfolio application, focusing on studies, projects, and skills, while also managing contact messages. It adheres to the principles of Authorization Independence, Structural Segregation, and Access Modeling to ensure security and scalability. The structure emphasizes path-based ownership and avoids hierarchical authorization dependencies. \n\n1.  **User-Owned Data:** Studies, projects, and skills are stored under `/users/{userId}`. This structure enforces clear ownership.  \n2.  **Contact Messages:** Stored in a separate `/contact_messages` collection. This segregates data with different access requirements (public creation, admin read).  \n\n**Authorization Independence (Denormalization):** Since this application focuses on personal portfolio data owned by individual users, denormalization is less critical. However, if collaborative features were added in the future, fields like `ownerId` or `members` would need to be copied into subcollections to avoid `get()` calls in security rules.\n\n**QAPs (Rules are not Filters):** The path-based ownership model (`/users/{userId}/...`) allows for efficient and secure `list` operations, as rules can directly check if `request.auth.uid == userId`.\n"
+  }
+}
