@@ -1,0 +1,1 @@
+This folder is for static assets like images. Please move your 'profile.jpeg' file here.

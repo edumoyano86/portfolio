@@ -39,16 +39,16 @@ const featuredProjects = [
 const experience = [
     {
         role: "Desarrollador full stack",
-        company: "Freelance & Proyectos Propios",
+        company: "Profesional independiente",
         period: "ene. 2020 - actualidad",
-        description: "Desarrollo aplicaciones web completas, como 'Kontalo.com.ar', una plataforma de gestión minorista que nació de mi propia necesidad como comerciante. Mi foco es crear herramientas que sean útiles, eficientes y resuelvan problemas del mundo real.",
+        description: "Desarrollo de proyectos propios (como kontalo.com.ar) y trabajos freelance. Construcción de aplicaciones web completas (full stack) con un enfoque en la resolución de problemas de negocio y la creación de herramientas eficientes para el mundo real.",
         icon: Briefcase
     },
     {
         role: "Propietario",
-        company: "J & L y Xime joyería",
+        company: "Emprendimientos propios",
         period: "ago. 2019 - actualidad",
-        description: "Gestiono dos emprendimientos, 'Xime Joyería' y 'J&L Librería', manejando la venta directa, online (redes sociales, Mercado Libre) y catálogos digitales. Esta experiencia directa con las necesidades del negocio me inspiró a crear soluciones de software a medida.",
+        description: "Fundación y gestión integral de 'Xime Joyería' y 'J&L Librería'. Responsable de la estrategia de negocio, ventas (online y presencial), gestión de inventario y desarrollo de catálogos digitales. Esta experiencia práctica me dio una visión profunda de las necesidades del comercio minorista, impulsando la creación de soluciones de software a medida.",
         icon: Building
     }
 ]
@@ -61,7 +61,9 @@ export default function Home() {
       <section className="text-center mb-24 md:mb-32">
         <div className="flex flex-col items-center">
             <Avatar className="w-32 h-32 mb-6 border-4 border-primary/20 shadow-lg">
-              <AvatarImage src="/profile.jpeg" alt="Eduardo Moyano" />
+              <AvatarImage asChild src={"/profile.jpeg"}>
+                <Image src={"/profile.jpeg"} alt="Eduardo Moyano" width={128} height={128} priority />
+              </AvatarImage>
               <AvatarFallback>EM</AvatarFallback>
             </Avatar>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 text-primary">
