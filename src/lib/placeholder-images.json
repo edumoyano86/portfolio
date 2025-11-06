@@ -11,8 +11,8 @@
       "description": "A screenshot of a retail management platform.",
       "imageUrls": [
         "/kontalo.png",
-        "https://picsum.photos/seed/kontalo2/600/400",
-        "https://picsum.photos/seed/kontalo3/600/400"
+        "/kontalo-1.png",
+        "/kontalo-2.png"
       ],
       "imageHint": "ecommerce website"
     },
@@ -39,8 +39,8 @@
       "description": "A portfolio website layout",
       "imageUrls": [
         "/portfolio.png",
-        "https://picsum.photos/seed/portfolio2/600/400",
-        "https://picsum.photos/seed/portfolio3/600/400"
+        "/portfolio-1.png",
+        "/portfolio-2.png"
       ],
       "imageHint": "portfolio design"
     },
