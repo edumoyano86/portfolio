@@ -10,9 +10,9 @@
       "id": "kontalo",
       "description": "A screenshot of a retail management platform.",
       "imageUrls": [
-        "/kontalo.png",
-        "/kontalo-1.png",
-        "/kontalo-2.png"
+        "/kontalo1.png",
+        "/kontalo2.png",
+        "/kontalo.png"
       ],
       "imageHint": "ecommerce website"
     },
@@ -38,9 +38,9 @@
       "id": "wip-1",
       "description": "A portfolio website layout",
       "imageUrls": [
-        "/portfolio.png",
-        "/portfolio-1.png",
-        "/portfolio-2.png"
+        "/portfolio1.png",
+        "/portfolio2.png",
+        "/portfolio.png"
       ],
       "imageHint": "portfolio design"
     },
