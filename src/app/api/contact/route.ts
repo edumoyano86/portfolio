@@ -11,14 +11,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Faltan datos en el formulario.' }, { status: 400 });
     }
     
-    // IMPORTANT: Use an App Password for Gmail, not your regular password.
-    // Set these environment variables in your hosting provider.
-    const user = process.env.EMAIL_USER || 'cba2486@gmail.com';
-    const pass = process.env.EMAIL_PASS || 'dxgz aosz ikzq onlg';
-    const recipientEmail = process.env.RECIPIENT_EMAIL || 'cba2486@gmail.com';
+    // IMPORTANT: These values are configured as secrets in Firebase App Hosting.
+    const user = process.env.EMAIL_USER;
+    const pass = process.env.EMAIL_PASS;
+    const recipientEmail = process.env.RECIPIENT_EMAIL;
 
-    if (!user || !pass) {
-        console.error('Missing environment variables for email');
+    if (!user || !pass || !recipientEmail) {
+        console.error('Missing environment variables for email. Make sure EMAIL_USER, EMAIL_PASS, and RECIPIENT_EMAIL secrets are set in your App Hosting backend.');
         return NextResponse.json({ error: 'Configuración del servidor incompleta.' }, { status: 500 });
     }
 
