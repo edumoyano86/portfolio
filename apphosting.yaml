@@ -6,5 +6,13 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
-  # Secrets are no longer needed as the contact form was replaced with a mailto link.
-  secrets: []
+  # Secrets are required for the contact form to send emails.
+  # These values will be provisioned in Secret Manager.
+  secrets:
+    - secret: EMAIL_USER
+      environmentVariable: EMAIL_USER
+    - secret: EMAIL_PASS
+      environmentVariable: EMAIL_PASS
+    - secret: RECIPIENT_EMAIL
+      environmentVariable: RECIPIENT_EMAIL
+
