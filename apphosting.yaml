@@ -1,3 +1,4 @@
+
 # Settings to manage and configure a Firebase App Hosting backend.
 # https://firebase.google.com/docs/app-hosting/configure
 
@@ -5,13 +6,5 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
-  # NOTE: Secrets are defined here, but their values must be set in the Google Cloud Secret Manager.
-  # The Firebase App Hosting UI should provide a way to set these, but as of this writing,
-  # it has proven unreliable. Setting the values directly in the code is a temporary workaround.
-  secrets:
-    - secret: EMAIL_USER
-      value: "cba2486@gmail.com"
-    - secret: EMAIL_PASS
-      value: "dxgz aosz ikzq onlg"
-    - secret: RECIPIENT_EMAIL
-      value: "cba2486@gmail.com"
+  # Secrets are no longer needed as the contact form was replaced with a mailto link.
+  secrets: []

@@ -17,7 +17,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Send } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 
 const formSchema = z.object({
@@ -28,7 +27,6 @@ const formSchema = z.object({
 });
 
 export default function ContactPage() {
-    const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -41,37 +39,20 @@ export default function ContactPage() {
         },
     });
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
-        setIsSubmitting(true);
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(values),
-            });
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        const recipientEmail = "cba2486@gmail.com";
+        const subject = encodeURIComponent(`[Portfolio Contact] ${values.subject}`);
+        const body = encodeURIComponent(
+`Hola,
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Algo salió mal en el servidor.');
-            }
+Soy ${values.name} (${values.email}).
 
-            toast({
-                title: "¡Mensaje Enviado!",
-                description: "Gracias por contactarme. Te responderé lo antes posible.",
-            });
-
-            form.reset();
-        } catch (error: any) {
-            toast({
-                variant: "destructive",
-                title: "Error al enviar el mensaje",
-                description: error.message || "Hubo un problema. Por favor, intenta de nuevo más tarde.",
-            });
-        } finally {
-            setIsSubmitting(false);
-        }
+Mensaje:
+${values.message}
+`
+        );
+        const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
     }
 
     return (
@@ -89,7 +70,7 @@ export default function ContactPage() {
                 <div className="flex flex-col justify-center">
                     <h2 className="text-3xl font-bold mb-4">Envíame un mensaje</h2>
                     <p className="text-muted-foreground mb-8">
-                        Completa el formulario y me pondré en contacto contigo a la brevedad. También puedes contactarme directamente a mi correo.
+                        Completa el formulario para abrir tu aplicación de correo y enviarme un mensaje directamente.
                     </p>
                      <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50">
                         <Mail className="w-6 h-6 text-primary"/>
@@ -110,7 +91,7 @@ export default function ContactPage() {
                                         <FormItem>
                                             <FormLabel>Nombre</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="Tu nombre" {...field} disabled={isSubmitting} />
+                                                <Input placeholder="Tu nombre" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
@@ -121,9 +102,9 @@ export default function ContactPage() {
                                     name="email"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Email de Contacto</FormLabel>
+                                            <FormLabel>Tu Email (para referencia)</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="tu@email.com" {...field} disabled={isSubmitting} />
+                                                <Input placeholder="tu@email.com" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
@@ -136,7 +117,7 @@ export default function ContactPage() {
                                         <FormItem>
                                             <FormLabel>Asunto</FormLabel>
                                             <FormControl>
-                                                <Input placeholder="Asunto del mensaje" {...field} disabled={isSubmitting} />
+                                                <Input placeholder="Asunto del mensaje" {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
@@ -153,15 +134,14 @@ export default function ContactPage() {
                                                     placeholder="Cuéntame sobre tu proyecto o idea..."
                                                     className="min-h-[120px]"
                                                     {...field}
-                                                    disabled={isSubmitting}
                                                 />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
                                     )}
                                 />
-                                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                                    {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'} <Send className="ml-2 w-4 h-4"/>
+                                <Button type="submit" className="w-full" size="lg">
+                                    Abrir cliente de correo <Send className="ml-2 w-4 h-4"/>
                                 </Button>
                             </form>
                         </Form>
