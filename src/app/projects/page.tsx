@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useState } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const projects = [
     {
@@ -29,8 +30,14 @@ const projects = [
     },
 ];
 
+type SelectedProjectImages = {
+  images: string[];
+  startIndex: number;
+  title: string;
+};
+
 export default function ProjectsPage() {
-    const [selectedImg, setSelectedImg] = useState<string | null>(null);
+    const [selectedProject, setSelectedProject] = useState<SelectedProjectImages | null>(null);
 
     return (
         <Dialog>
@@ -47,15 +54,15 @@ export default function ProjectsPage() {
                 <div className="space-y-24">
                     {projects.map((project) => {
                         const projectImage = PlaceHolderImages.find(p => p.id === project.id);
-                        const imageUrl = projectImage?.imageUrls?.[0];
+                        const imageUrls = projectImage?.imageUrls || [];
 
                         return (
                             <div key={project.id} className="grid lg:grid-cols-2 gap-12 items-center">
-                                <DialogTrigger asChild onClick={() => imageUrl && setSelectedImg(imageUrl)}>
+                                <DialogTrigger asChild onClick={() => imageUrls.length > 0 && setSelectedProject({ images: imageUrls, startIndex: 0, title: project.title })}>
                                     <div className="relative group/item cursor-pointer">
-                                        {imageUrl && (
+                                        {imageUrls.length > 0 && (
                                             <Image
-                                                src={imageUrl}
+                                                src={imageUrls[0]}
                                                 alt={project.title}
                                                 width={1200}
                                                 height={800}
@@ -96,23 +103,38 @@ export default function ProjectsPage() {
                 </div>
             </div>
 
-            <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none">
-                <DialogHeader>
-                    <DialogTitle className="sr-only">Imagen Ampliada del Proyecto</DialogTitle>
-
-                    <DialogDescription className="sr-only">
-                        Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
-                    </DialogDescription>
-                </DialogHeader>
-                {selectedImg && (
-                    <div className="relative">
-                        <Image src={selectedImg} alt="Imagen ampliada" width={1200} height={800} className="w-full h-full object-contain rounded-lg shadow-2xl" />
-                         <DialogClose className="absolute -top-2 -right-2 bg-background rounded-full p-1 opacity-100 hover:scale-110 transition-transform">
+            <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none flex items-center justify-center">
+                 {selectedProject && (
+                    <div className="relative w-full">
+                        <Carousel opts={{ loop: true, startIndex: selectedProject.startIndex }}>
+                            <CarouselContent>
+                                {selectedProject.images.map((url, index) => (
+                                    <CarouselItem key={index}>
+                                        <Image src={url} alt={`${selectedProject.title} - Imagen ampliada ${index + 1}`} width={1200} height={800} className="w-full h-full object-contain rounded-lg shadow-2xl" />
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                             {selectedProject.images.length > 1 && (
+                                <>
+                                    <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/80" />
+                                    <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/80" />
+                                </>
+                            )}
+                        </Carousel>
+                         <DialogClose className="absolute -top-2 -right-2 bg-background rounded-full p-1 opacity-100 hover:scale-110 transition-transform z-10">
                             <X className="w-6 h-6"/>
                         </DialogClose>
                     </div>
                 )}
+                 <DialogHeader className="sr-only">
+                    <DialogTitle>Imagen Ampliada del Proyecto</DialogTitle>
+                    <DialogDescription>
+                        Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
+                    </DialogDescription>
+                </DialogHeader>
             </DialogContent>
         </Dialog>
     );
 }
+
+    

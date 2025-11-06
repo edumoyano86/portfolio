@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -11,8 +12,7 @@
       "description": "A screenshot of a retail management platform.",
       "imageUrls": [
         "/kontalo1.png",
-        "/kontalo2.png",
-        "/kontalo.png"
+        "/kontalo2.png"
       ],
       "imageHint": "ecommerce website"
     },
@@ -52,3 +52,5 @@
     }
   ]
 }
+
+    

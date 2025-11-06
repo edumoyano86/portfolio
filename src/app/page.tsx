@@ -82,8 +82,14 @@ const consultingServices = [
     }
 ];
 
+type SelectedProjectImages = {
+  images: string[];
+  startIndex: number;
+  title: string;
+};
+
 export default function Home() {
-    const [selectedImg, setSelectedImg] = useState<string | null>(null);
+    const [selectedProject, setSelectedProject] = useState<SelectedProjectImages | null>(null);
   
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -199,12 +205,12 @@ export default function Home() {
                 const projectImage = PlaceHolderImages.find(p => p.id === project.id);
                 return (
                 <Card key={project.id} className="overflow-hidden group transition-all duration-300 ease-in-out hover:border-primary/50 hover:shadow-primary/20 hover:shadow-lg">
-                    {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 1 ? (
+                    {projectImage && projectImage.imageUrls && projectImage.imageUrls.length > 0 && (
                     <Carousel className="w-full bg-muted/20">
                         <CarouselContent>
                         {projectImage.imageUrls.map((url, index) => (
                             <CarouselItem key={index}>
-                                <DialogTrigger asChild onClick={() => setSelectedImg(url)}>
+                                <DialogTrigger asChild onClick={() => setSelectedProject({ images: projectImage.imageUrls, startIndex: index, title: project.title })}>
                                     <div className="relative group/item cursor-pointer">
                                         <Image
                                             src={url}
@@ -225,22 +231,6 @@ export default function Home() {
                         <CarouselPrevious className="left-4" />
                         <CarouselNext className="right-4" />
                     </Carousel>
-                    ) : projectImage && projectImage.imageUrls && projectImage.imageUrls.length === 1 && (
-                        <DialogTrigger asChild onClick={() => setSelectedImg(projectImage.imageUrls[0])}>
-                            <div className="relative group/item cursor-pointer">
-                                <Image
-                                    src={projectImage.imageUrls[0]}
-                                    alt={project.title}
-                                    width={600}
-                                    height={400}
-                                    className="w-full h-80 object-contain bg-muted/20 transition-transform duration-300 group-hover/item:scale-105"
-                                    data-ai-hint={projectImage.imageHint}
-                                />
-                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover/item:opacity-100 transition-opacity duration-300">
-                                    <Expand className="w-12 h-12 text-white" />
-                                </div>
-                            </div>
-                        </DialogTrigger>
                     )}
                     <CardHeader>
                     <CardTitle className="text-2xl">{project.title}</CardTitle>
@@ -269,21 +259,35 @@ export default function Home() {
                 );
             })}
             </div>
-            <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none">
-                <DialogHeader>
-                    <DialogTitle className="sr-only">Imagen Ampliada del Proyecto</DialogTitle>
-                    <DialogDescription className="sr-only">
-                        Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
-                    </DialogDescription>
-                </DialogHeader>
-                {selectedImg && (
-                    <div className="relative">
-                        <Image src={selectedImg} alt="Imagen ampliada" width={1200} height={800} className="w-full h-full object-contain rounded-lg shadow-2xl" />
-                         <DialogClose className="absolute -top-2 -right-2 bg-background rounded-full p-1 opacity-100 hover:scale-110 transition-transform">
+            <DialogContent className="max-w-4xl h-auto bg-transparent border-none shadow-none flex items-center justify-center">
+                {selectedProject && (
+                    <div className="relative w-full">
+                        <Carousel opts={{ loop: true, startIndex: selectedProject.startIndex }}>
+                            <CarouselContent>
+                                {selectedProject.images.map((url, index) => (
+                                    <CarouselItem key={index}>
+                                        <Image src={url} alt={`${selectedProject.title} - Imagen ampliada ${index + 1}`} width={1200} height={800} className="w-full h-full object-contain rounded-lg shadow-2xl" />
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                             {selectedProject.images.length > 1 && (
+                                <>
+                                    <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/80" />
+                                    <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-black/50 hover:bg-black/80" />
+                                </>
+                            )}
+                        </Carousel>
+                         <DialogClose className="absolute -top-2 -right-2 bg-background rounded-full p-1 opacity-100 hover:scale-110 transition-transform z-10">
                             <X className="w-6 h-6"/>
                         </DialogClose>
                     </div>
                 )}
+                 <DialogHeader className="sr-only">
+                    <DialogTitle>Imagen Ampliada del Proyecto</DialogTitle>
+                    <DialogDescription>
+                        Contenido de la imagen del proyecto en un tamaño más grande para mejor visualización.
+                    </DialogDescription>
+                </DialogHeader>
             </DialogContent>
         </Dialog>
 
@@ -296,3 +300,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
