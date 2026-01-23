@@ -1,0 +1,80 @@
+/**
+ * @fileoverview Firestore Security Rules for the EduMoyano portfolio application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model for most data, while
+ * allowing public read access for content essential to the portfolio's display,
+ * such as images.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Checks if the request is made by a signed-in user.
+     * @returns {boolean} True if the user is signed in, false otherwise.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * @description Checks if the authenticated user is the owner of the document, based on the userId path parameter.
+     * @param {string} userId - The userId from the path.
+     * @returns {boolean} True if the user is the owner, false otherwise.
+     */
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    /**
+     * @description
+     * Secures the `portfolio_images` collection.
+     * Allows public read access for anyone to view the image URLs.
+     * Restricts write operations (create, update, delete) to authenticated users only.
+     * This allows the admin (you) to manage images after logging in.
+     */
+    match /portfolio_images/{imageName} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    
+    /**
+     * @description
+     * Secures the `contact_messages` collection.
+     * Allows anyone to create (submit) a message.
+     * Restricts read, update, and delete to prevent visitors from seeing each other's messages.
+     */
+    match /contact_messages/{messageId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    /**
+     * @description
+     * Secures the studies collection for a specific user.
+     * Only the authenticated user with a matching `userId` can create, read, update, and delete their own studies.
+     */
+    match /users/{userId}/studies/{studyId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    /**
+     * @description
+     * Secures the projects collection for a specific user.
+     * Only the authenticated user with a matching `userId` can create, read, update, and delete their own projects.
+     */
+    match /users/{userId}/projects/{projectId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    /**
+     * @description
+     * Secures the skills collection for a specific user.
+     * Only the authenticated user with a matching `userId` can create, read, update, and delete their own skills.
+     */
+    match /users/{userId}/skills/{skillId} {
+      allow read, write: if isOwner(userId);
+    }
+  }
+}

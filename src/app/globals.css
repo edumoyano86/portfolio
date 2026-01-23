@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 89% 6%; /* Deep midnight blue */
+    --foreground: 210 40% 98%; /* Almost white */
+
+    --card: 222 80% 9%; /* Slightly lighter blue */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 80% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%; /* Vibrant electric blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 40% 15%;
+    --muted-foreground: 210 40% 60%;
+
+    --accent: 173 95% 45%; /* Bright teal/cyan */
+    --accent-foreground: 222 89% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 217 30% 25%;
+    --input: 217 30% 25%;
+    --ring: 217 91% 60%; 
+
+    --chart-1: 217 91% 60%;
+    --chart-2: 173 95% 45%;
+    --chart-3: 330 85% 55%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 89% 6%; /* Deep midnight blue */
+    --foreground: 210 40% 98%; /* Almost white */
+
+    --card: 222 80% 9%; /* Slightly lighter blue */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 80% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%; /* Vibrant electric blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 40% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 40% 15%;
+    --muted-foreground: 210 40% 60%;
+
+    --accent: 173 95% 45%; /* Bright teal/cyan */
+    --accent-foreground: 222 89% 6%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 30% 25%;
+    --input: 217 30% 25%;
+    --ring: 217 91% 60%;
+
+    --chart-1: 217 91% 60%;
+    --chart-2: 173 95% 45%;
+    --chart-3: 330 85% 55%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
