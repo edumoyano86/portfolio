@@ -56,7 +56,7 @@ firebase.json
 docs/
 
 # package manager
-package-lock.json
+# package-lock.json
 
 # temp files
 public/placeholder.txt
