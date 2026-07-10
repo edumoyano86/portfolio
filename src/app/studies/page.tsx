@@ -4,10 +4,24 @@ import { Calendar, Award, BookOpen } from "lucide-react";
 
 const studies = [
     {
-        title: "Carrera de Desarrollo Full Stack",
+        title: "Tecnicatura Universitaria en Desarrollo Web",
+        institution: "Universidad Nacional de Entre Ríos",
+        date: "Ene 2026 - Presente",
+        description: "Formación académica de pregrado enfocada en el desarrollo de software y tecnologías web modernas.",
+        icon: BookOpen
+    },
+    {
+        title: "Curso de JavaScript",
         institution: "Coderhouse",
-        date: "2025 - Presente",
-        description: "Formación intensiva en desarrollo web, cubriendo tecnologías como JavaScript, React.js, Node.js, Express y bases de datos. Actualmente en curso.",
+        date: "Expedido en Mar 2026",
+        description: "Curso intensivo de programación en JavaScript, abarcando asincronismo, consumo de APIs y manipulación avanzada del DOM.",
+        icon: Award
+    },
+    {
+        title: "Curso de Desarrollo Web",
+        institution: "Coderhouse",
+        date: "Expedido en Dic 2025",
+        description: "Fundamentos del desarrollo web moderno con HTML5, CSS3, Flexbox, Grid y principios de diseño responsive.",
         icon: Award
     },
     {

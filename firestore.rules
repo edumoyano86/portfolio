@@ -52,6 +52,16 @@ service cloud.firestore {
 
     /**
      * @description
+     * Secures the `stats` collection for the view counter.
+     * Allows anyone to read, create and update the view counter.
+     */
+    match /stats/{statId} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    /**
+     * @description
      * Secures the studies collection for a specific user.
      * Only the authenticated user with a matching `userId` can create, read, update, and delete their own studies.
      */

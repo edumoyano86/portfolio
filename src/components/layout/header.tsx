@@ -11,6 +11,8 @@ import Image from "next/image";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '@/firebase/config';
 
+import { ThemeToggle } from "@/components/theme-toggle";
+
 const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/studies", label: "Estudios" },
@@ -84,6 +86,7 @@ export function Header() {
               </Link>
             </Button>
           )}
+          <ThemeToggle />
           <div className="md:hidden">
             {isClient && (
               <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
