@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { imageUrls } from "@/lib/data";
+import { CVDialog } from "@/components/cv-dialog";
 
 export function HeroSection() {
   return (
@@ -25,6 +26,7 @@ export function HeroSection() {
               Ver Mis Proyectos <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
+          <CVDialog variant="outline" size="lg" triggerText="Descargar CV" />
           <Button asChild size="lg" variant="outline">
             <Link href="/contact">Hablemos</Link>
           </Button>
@@ -33,3 +35,4 @@ export function HeroSection() {
     </section>
   );
 }
+

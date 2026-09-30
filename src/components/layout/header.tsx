@@ -17,9 +17,11 @@ const navLinks = [
   { href: "/", label: "Inicio" },
   { href: "/studies", label: "Estudios" },
   { href: "/projects", label: "Proyectos" },
+  { href: "/cv", label: "CV" },
   { href: "/work-in-progress", label: "En Progreso" },
   { href: "/contact", label: "Contacto" },
 ];
+
 
 if (process.env.NODE_ENV === 'development') {
   navLinks.push({ href: "/admin", label: "Admin" });

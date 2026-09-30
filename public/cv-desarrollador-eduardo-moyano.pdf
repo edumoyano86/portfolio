@@ -1,0 +1,262 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 4380 >>
+stream
+0.08 0.12 0.22 rg
+0 757 595 85 re f
+1 1 1 rg
+BT
+/F2 22 Tf
+40 800 Td
+(Eduardo Moyano) Tj
+ET
+0.38 0.72 0.98 rg
+BT
+/F1 12 Tf
+40 780 Td
+(Desarrollador Web Full Stack \(Next.js | React | TypeScript | Firebase\)) Tj
+ET
+0.85 0.9 0.95 rg
+BT
+/F1 9 Tf
+40 766 Td
+(Email: cba2486@gmail.com  |  LinkedIn: linkedin.com/in/edumoyano86  |  Web: edumoyano.com) Tj
+ET
+0.08 0.12 0.22 rg
+BT
+/F2 13 Tf
+40 732 Td
+(PERFIL PROFESIONAL) Tj
+ET
+0.8 0.85 0.9 rg
+40 728 m 555 728 l S
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 714 Td
+(Desarrollador Web Full Stack con solida experiencia construyendo aplicaciones web modernas, SaaS en) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 701 Td
+(produccion y soluciones de automatizacion. Creador de Kontalo \(plataforma integral de gestion comercial y POS) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 688 Td
+(con PWA e IA asistiva\) y Clarity \(gestion financiera personal con IA\). Combino fuerte rigor tecnico con una) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 675 Td
+(clara vision de negocio y experiencia de usuario.) Tj
+ET
+0.08 0.12 0.22 rg
+BT
+/F2 13 Tf
+40 654 Td
+(HABILIDADES TECNICAS) Tj
+ET
+0.8 0.85 0.9 rg
+40 650 m 555 650 l S
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 636 Td
+(Lenguajes & Frameworks: JavaScript \(ES6+\), TypeScript, React.js, Next.js \(App Router\), Node.js, Express.js.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 623 Td
+(Backend & Bases de Datos: Firebase \(Firestore, Auth, Storage, Cloud Functions\), SQL / NoSQL, APIs REST.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 610 Td
+(Frontend & UI: Tailwind CSS, Shadcn UI, Radix UI, Responsive Design, Progressive Web Apps \(PWA\).) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9.5 Tf
+40 597 Td
+(Herramientas & Otros: Git, GitHub, Genkit AI / LLMs, Integracion Pasarelas de Pago \(Mercado Pago API\).) Tj
+ET
+0.08 0.12 0.22 rg
+BT
+/F2 13 Tf
+40 576 Td
+(EXPERIENCIA EN DESARROLLO & PROYECTOS) Tj
+ET
+0.8 0.85 0.9 rg
+40 572 m 555 572 l S
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 558 Td
+(Kontalo - Sistema SaaS de Gestion Comercial & POS Cloud) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 545 Td
+(Creador y Desarrollador Full Stack | 2024 - Actualidad) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 532 Td
+(- Desarrollo integral de plataforma SaaS y PWA para comercios minoristas \(Next.js, TypeScript, Firebase\).) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 520 Td
+(- Punto de Venta \(POS\) con atajos de teclado \(F2, F4\), soporte para lector de codigo de barras y tickets de 80mm.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 508 Td
+(- Modulo de arqueo de caja chica por turnos, calculo automatico de sobrantes/faltantes y auditoria de gastos.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 496 Td
+(- Asistente con IA para sugerencia de margenes comerciales \(+30% a +100%\) y alertas de stock inmovilizado.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 484 Td
+(- Exportador mensual para el contador en 1 clic \(Modo Monotributo y Resp. Inscripto / Libro IVA AFIP\).) Tj
+ET
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 468 Td
+(Clarity - Plataforma de Finanzas Personales con IA) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 455 Td
+(Desarrollador Full Stack | 2024) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 442 Td
+(- Aplicacion integral de seguimiento patrimonial, control de deudas, inversiones y presupuestos.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 430 Td
+(- Integracion de Genkit AI para recomendaciones personalizadas de ahorro y habitos financieros.) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 418 Td
+(- Arquitectura en Next.js, Firebase Auth y Firestore con sincronizacion en tiempo real.) Tj
+ET
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 402 Td
+(Desarrollo Web Freelance) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 389 Td
+(Profesional Independiente | 2020 - Actualidad) Tj
+ET
+0.2 0.2 0.2 rg
+BT
+/F1 9 Tf
+50 376 Td
+(- Diseno e implementacion de sitios web responsive, catalogos digitales y aplicaciones web a medida.) Tj
+ET
+0.08 0.12 0.22 rg
+BT
+/F2 13 Tf
+40 352 Td
+(EDUCACION & CERTIFICACIONES) Tj
+ET
+0.8 0.85 0.9 rg
+40 348 m 555 348 l S
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 334 Td
+(Tecnicatura Universitaria en Desarrollo Web) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 321 Td
+(Universidad Nacional de Entre Rios \(UNER\) | 2026 - Presente) Tj
+ET
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 304 Td
+(Diplomatura en Programacion Web Full Stack con React JS) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 291 Td
+(UTN FRBA - Centro de e-Learning | 2021) Tj
+ET
+0.1 0.1 0.1 rg
+BT
+/F2 10 Tf
+40 274 Td
+(Curso de JavaScript y Desarrollo Web) Tj
+ET
+0.4 0.4 0.4 rg
+BT
+/F1 9 Tf
+40 261 Td
+(Coderhouse | 2025 - 2026) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000004689 00000 n 
+0000004786 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4888
+%%EOF

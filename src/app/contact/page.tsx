@@ -15,16 +15,28 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/firebase/config";
+import { CVDialog } from "@/components/cv-dialog";
+
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
   email: z.string().email({ message: "Por favor, introduce un email válido." }),
+  serviceType: z.string({
+    required_error: "Por favor, selecciona qué tipo de perfil o servicio estás buscando.",
+  }).min(1, { message: "Por favor, selecciona qué tipo de perfil o servicio estás buscando." }),
   subject: z.string().min(5, { message: "El asunto debe tener al menos 5 caracteres." }),
   message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
 });
@@ -39,10 +51,12 @@ export default function ContactPage() {
         defaultValues: {
             name: "",
             email: "",
+            serviceType: "",
             subject: "",
             message: "",
         },
     });
+
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         if (!firestore) {
@@ -97,14 +111,23 @@ export default function ContactPage() {
                     <p className="text-muted-foreground mb-8">
                         Completa el formulario y tu mensaje se guardará de forma segura en mi base de datos. Me pondré en contacto contigo a la brevedad.
                     </p>
-                     <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50 mb-8">
+                     <div className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/50 mb-4">
                         <Mail className="w-6 h-6 text-primary"/>
                         <span className="text-lg text-foreground">
                             cba2486@gmail.com
                         </span>
                     </div>
 
+                    <div className="p-4 rounded-lg bg-card/50 border border-border/50 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <h4 className="font-semibold text-sm text-foreground">¿Buscas mi Currículum?</h4>
+                            <p className="text-xs text-muted-foreground">Descarga la versión Dev o Asistente Remoto.</p>
+                        </div>
+                        <CVDialog variant="outline" size="sm" triggerText="Descargar CV" />
+                    </div>
+
                     <div className="space-y-4">
+
                         <h3 className="text-xl font-semibold">También me encuentras en:</h3>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Button asChild variant="outline" size="lg" className="flex-1 justify-start">
@@ -161,6 +184,37 @@ export default function ContactPage() {
                                 />
                                 <FormField
                                     control={form.control}
+                                    name="serviceType"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>¿Qué tipo de perfil o servicio estás buscando?</FormLabel>
+                                            <Select onValueChange={field.onChange} defaultValue={field.value} value={field.value}>
+                                                <FormControl>
+                                                    <SelectTrigger>
+                                                        <SelectValue placeholder="Selecciona una opción..." />
+                                                    </SelectTrigger>
+                                                </FormControl>
+                                                <SelectContent>
+                                                    <SelectItem value="Asistencia Administrativa / Data Entry / Soporte">
+                                                        Asistencia Administrativa / Data Entry / Soporte
+                                                    </SelectItem>
+                                                    <SelectItem value="Atención al Cliente / Gestión de Mensajes">
+                                                        Atención al Cliente / Gestión de Mensajes
+                                                    </SelectItem>
+                                                    <SelectItem value="Desarrollo Web / Programación">
+                                                        Desarrollo Web / Programación
+                                                    </SelectItem>
+                                                    <SelectItem value="Proyecto a medida / Otro">
+                                                        Proyecto a medida / Otro
+                                                    </SelectItem>
+                                                </SelectContent>
+                                            </Select>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
+                                <FormField
+                                    control={form.control}
                                     name="subject"
                                     render={({ field }) => (
                                         <FormItem>
@@ -172,6 +226,7 @@ export default function ContactPage() {
                                         </FormItem>
                                     )}
                                 />
+
                                 <FormField
                                     control={form.control}
                                     name="message"

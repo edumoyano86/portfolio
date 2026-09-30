@@ -1,0 +1,139 @@
+=====================================================
+KONTALÓ - SISTEMA INTEGRAL DE GESTIÓN COMERCIAL
+Base Publicitaria, Características y Copys de Venta
+Web oficial: https://kontalo.com.ar
+=====================================================
+
+1. ¿QUÉ ES KONTALÓ?
+-----------------------------------------------------
+Kontaló es la plataforma en la nube definitiva para comercios minoristas, emprendedores, distribuidoras y negocios multirubro. 
+Permite tomar el control absoluto de tus ventas en mostrador, stock, caja diaria, compras, finanzas, reportes impositivos y tiendas online, todo desde un único lugar accesible desde celulares, tablets o computadoras sin instalar programas pesados.
+
+2. MÓDULOS Y FUNCIONALIDADES PRINCIPALES
+-----------------------------------------------------
+
+* PUNTO DE VENTA (POS) INTELIGENTE Y ATENCIÓN RÁPIDA:
+  - Búsqueda predictiva de productos por nombre o descripción con foco automático para no frenar la atención al público.
+  - Atajos de Teclado (Hotkeys) para vender en segundos: F2 para abrir venta y enfocar buscador, F4 para cobro rápido al contado en Efectivo, Esc para limpiar.
+  - Soporte para lector de código de barras físico o escáner con la cámara del celular/tablet.
+  - Alerta visual inmediata de stock mínimo al agregar productos al carrito.
+  - Descuentos automáticos al contado (efectivo y transferencia bancaria).
+  - Precios por volumen y escalas mayoristas configurables por producto.
+  - Descuento manual por producto y descuento general en cascada.
+  - Cobros combinados/mixtos (efectivo, débito, crédito, transferencias, Mercado Pago y saldo a favor del cliente).
+  - Gestión de ventas pendientes, cuentas corrientes y fiado con historial de abonos y cuotas parciales.
+  - Emisión instantánea de tickets/comprobantes para imprimir en formato térmico (80mm), guardar en PDF o compartir por WhatsApp con 1 clic.
+
+* ARQUEO Y CIERRE DE TURNOS DE CAJA (CONTROL DE CAJA CHICA):
+  - Módulo de Turnos y Caja Chica para evitar diferencias de dinero entre empleados o cambios de turno.
+  - Apertura de turno con ingreso de Fondo Inicial de cambio en efectivo.
+  - Registro y sumatoria automática de cobros en efectivo ingresados durante el turno.
+  - Registro de egresos y gastos operativos pagados en efectivo desde la caja chica.
+  - Cierre y arqueo ciego o guiado: comparación instantánea de "Efectivo Esperado en Sistema" vs. "Efectivo Real Contado".
+  - Cálculo automático de sobrante, faltante o caja exacta con notas de auditoría y fecha/hora de cierre.
+
+* CONTROL TOTAL DE INVENTARIO Y STOCK:
+  - Seguimiento de stock en tiempo real por local y sucursal.
+  - Ajuste Rápido Masivo de Precios: cambia precios por categoría o porcentaje (+10%, +15%, etc.) con redondeo inteligente a $10, $50 o $100 para dar vuelto fácil en mostrador.
+  - Ajuste Rápido Masivo de Stock: suma mercadería recibida (+N), descuenta mermas (-N) o fija stock exacto tras conteo físico en lote.
+  - Asistente de IA para sugerir Precio de Venta y Márgenes (+30%, +40%, +50%, +60%, +70%, +100%) al ingresar el costo según el rubro.
+  - Carga masiva y exportación de productos en Excel.
+  - Alertas automáticas de stock bajo y agotado.
+  - Gestión de costos de reposición, precios regulares y descuentos por pago contado.
+
+* EXPORTADOR PARA EL CONTADOR (LIBRO IVA VENTAS Y COMPRAS SIMPLIFICADO):
+  - Generación en 1 clic de la planilla mensual de comprobantes de ventas y gastos para enviar al contador.
+  - Modo Monotributo (Por defecto): exporta el total facturado bruto sin exigir liquidación de IVA, perfecto para recategorizaciones de AFIP.
+  - Modo Responsable Inscripto: discrimina Neto Gravado, alícuotas (21%, 10.5%, etc.), Débito y Crédito Fiscal para el Libro IVA Digital.
+  - Control de Cuentas Corrientes: separa las ventas cobradas de las adeudadas/al fiado, e incluye un anexo con las cobranzas recibidas de deudas pasadas.
+  - Descarga en Excel (.csv con formato argentino) y botón "Copiar para WhatsApp" para enviar el resumen mensual en 1 segundo.
+
+* INTELIGENCIA ARTIFICIAL Y ANÁLISIS PREDICTIVO DE NEGOCIO:
+  - Consejos Predictivos de Rotación en el Dashboard: identifica productos con stock sin ventas hace más de 45 días y calcula el capital inmovilizado, sugiriendo descuentos o combos promocionales.
+  - Reportes Ejecutivos con IA: diagnóstico integral de ventas, ticket promedio, comportamiento de clientes y salud del flujo de caja (cobranzas vs. fiado).
+  - Redactor publicitario con IA para generar descripciones comerciales persuasivas de productos.
+
+* GESTIÓN FINANCIERA Y CLASIFICACIÓN DE GASTOS:
+  - Registro de compras a proveedores y gastos operativos de caja chica.
+  - Clasificación de egresos en:
+    • Costos Fijos (Alquiler, internet, sueldos fijos, servicios).
+    • Costos Variables (Reposición de mercadería, insumos, fletes, comisiones).
+    • Inversiones (Maquinarias, equipamiento, tecnología y reformas).
+  - Control de cuentas por pagar a proveedores a crédito o en cuotas.
+
+* DESTINO DE GANANCIAS Y COSTO DE MERCADERÍA VENDIDA (CMV):
+  - Cálculo de la Ganancia Neta Real en Caja (cobranzas efectivas menos pagos efectivos).
+  - Registro auditado de retiros del dueño, dividendos de socios, fondo de reserva y reinversión.
+  - Tarjetas de Costo de Mercadería Vendida (CMV) semanal, mensual y anual con cálculo de margen comercial bruto.
+
+* CANALES DE VENTA ONLINE (TU NEGOCIO EN INTERNET):
+  - Catálogo Web Público autogestionable (kontalo.com.ar/catalog/tu-negocio) con pedidos automáticos a WhatsApp.
+  - Previsualizaciones enriquecidas para WhatsApp (Open Graph / SEO): al enviar links se muestra la foto del producto, precio y nombre del negocio.
+  - Tienda Online completa con carrito de compras y pasarela de pago integrada con Mercado Pago.
+  - Panel de pedidos web para aceptar, preparar y despachar órdenes.
+
+* APLICACIÓN INSTALABLE (PWA - PROGRESSIVE WEB APP):
+  - Instalable directamente en celulares (Android / iOS) y computadoras como una aplicación nativa.
+  - Acceso directo en pantalla de inicio con carga instantánea y sin ocupar espacio en la memoria.
+
+* MULTILOCAL Y SUCURSALES (TODO EN UNA SOLA CUENTA):
+  - Creación de múltiples locales o puntos de venta.
+  - Switcher de sucursales en la barra lateral con datos 100% aislados e independientes.
+  - Reportes unificados y por sucursal.
+
+* EQUIPOS, ROLES Y PERMISOS SEGUROS:
+  - Roles de Dueño, Administrador y Vendedor/Cajero.
+  - Restricción de permisos para proteger costos, modificaciones de precios y reportes confidenciales.
+
+-----------------------------------------------------
+3. PROPUESTA DE VALOR / PUNTOS DE DOLOR QUE RESUELVE
+-----------------------------------------------------
+- "No sé cuánta plata gano realmente ni a dónde se va": Kontaló separa ingresos brutos de ganancias netas y te dice exactamente cuánto dinero real puedes retirar sin descapitalizarte.
+- "Cerrar la caja y controlar a los empleados es un dolor de cabeza": Apertura y cierre de turnos con arqueo ciego para saber al instante si sobra o falta efectivo.
+- "A fin de mes pierdo horas preparando papeles para el contador": Descargas un Excel con un clic discriminando ventas, gastos, cobrado y fiado, o le mandas el resumen por WhatsApp.
+- "Cambiar precios por la inflación producto por producto me lleva días": Con el Ajuste Masivo aumentas una categoría completa o todo tu local en 5 segundos con redondeo para mostrador.
+- "Tengo mercadería clavada en la estantería que no se vende": La IA te aconseja cómo rotar productos con más de 45 días parados para liberar capital.
+- "Pierdo ventas por demoras en la fila": Cobros ultra ágiles con atajos de teclado (F2, F4) y lector de código de barras.
+- "Quiero vender por internet sin comisiones abusivas": Catálogo digital con pedidos directos por WhatsApp y tienda online con Mercado Pago.
+
+-----------------------------------------------------
+4. COPYS PUBLICITARIOS LISTOS PARA USAR
+-----------------------------------------------------
+
+[COPY 1 - INSTAGRAM / FACEBOOK - ENFOQUE CONTROL DE CAJA Y FINANZAS]
+¿Te pasa que vendés un montón pero a fin de mes no sabés a dónde fue a parar la plata? 📊💰
+La mayoría de los comercios cierran la caja "a ojo" y pierden dinero sin darse cuenta. Con KONTALÓ tenés el control total:
+✅ Apertura y Arqueo de Caja Chica por turnos (sabé si sobra o falta dinero al centavo).
+✅ Ganancia Neta Real en Caja y registro de retiros de sueldo del dueño.
+✅ Exportador para tu Contador en Excel con 1 clic (Modo Monotributo y Resp. Inscripto).
+✅ Control de cuentas corrientes, fiados y cobranzas en cuotas.
+Dejá de adivinar y empezá a gestionar como los grandes comercios. 
+👉 Probá KONTALÓ gratis hoy en https://kontalo.com.ar 🚀
+
+[COPY 2 - REELS / TIKTOK / WHATSAPP - ENFOQUE AGILIDAD EN EL MOSTRADOR]
+Chau cuadernos, chau planillas de Excel que se rompen, chau calculadoras en el mostrador. ❌
+Con KONTALÓ convertís tu celular, tablet o PC en un Punto de Venta profesional:
+⚡ Atajos de teclado para cobrar en segundos (F2 para buscar, F4 para cobrar en efectivo).
+⚡ Lector de código de barras físico o con la cámara del celular.
+⚡ Aumento masivo de precios por categoría o porcentaje en 5 segundos con redondeo automático.
+⚡ Tickets listos para imprimir en comandera térmica o mandar por WhatsApp.
+⚡ App instalable en tu celular con un solo toque (PWA).
+Probá Kontaló y modernizá tu negocio ahora 👉 https://kontalo.com.ar
+
+[COPY 3 - ENFOQUE INTELIGENCIA ARTIFICIAL Y RENTABILIDAD]
+¿Cómo ponerle el precio correcto a tus productos para no perder contra los costos? 🤖💡
+KONTALÓ incorpora Inteligencia Artificial para ayudarte a ganar más:
+🔹 Al cargar el costo de un producto, la IA te sugiere el precio de venta ideal y margen según tu rubro (+30%, +40%, +50%, +60%...).
+🔹 Consejos predictivos en tu pantalla: detecta artículos sin ventas hace 45 días y te sugiere promociones para no tener capital estancado.
+🔹 Reportes ejecutivos que analizan tus cobranzas, ticket promedio y rentabilidad real.
+Tu negocio merece tecnología de primer nivel. Entrá en https://kontalo.com.ar y probalo sin costo.
+
+[COPY 4 - ENFOQUE MULTILOCAL Y COMERCIOS EN EXPANSIÓN]
+¿Tenés dos o más sucursales y te cuesta consolidar el stock y las cajas? 🏢🏬
+Con KONTALÓ manejás todos tus puntos de venta desde una sola cuenta:
+🔹 Stock y precios independientes por sucursal.
+🔹 Asignación de empleados y cajeros con permisos restringidos.
+🔹 Catálogo online propio para que tus clientes te pidan por WhatsApp.
+🔹 Toda la información en la nube, segura y accesible desde cualquier lugar.
+Empezá hoy mismo: https://kontalo.com.ar
+=====================================================

@@ -1,4 +1,20 @@
-import { Code, Database, Layers, PenTool, Smartphone, Briefcase, Building, ClipboardList, BarChart3, ShoppingCart, Globe } from "lucide-react";
+import { 
+    Code, 
+    Database, 
+    Layers, 
+    PenTool, 
+    Smartphone, 
+    Briefcase, 
+    Building, 
+    ClipboardList, 
+    BarChart3, 
+    ShoppingCart, 
+    Globe, 
+    FileSpreadsheet, 
+    MessageSquare, 
+    Calculator, 
+    Sparkles 
+} from "lucide-react";
 
 export const skills = [
   { name: "React.js", icon: Layers },
@@ -27,28 +43,64 @@ export const experience = [
     }
 ];
 
-export const consultingServices = [
+export const serviceCategories = [
     {
-        title: "Optimización de Inventario",
-        description: "Implementación de sistemas para el control de stock en tiempo real, organización por categorías y uso de códigos de barras para agilizar la gestión.",
-        icon: ClipboardList
+        category: "Soporte Administrativo & Operativo",
+        description: "Organización diaria, precisión en datos y atención ágil para mantener tu negocio en marcha.",
+        icon: ClipboardList,
+        accentColor: "accent",
+        services: [
+            {
+                title: "Asistencia Administrativa & Data Entry",
+                description: "Carga rápida y precisa de artículos, actualización de listas de precios, organización de catálogos y gestión de bases de datos sin errores.",
+                icon: FileSpreadsheet,
+                badge: "Data Entry & Catálogo"
+            },
+            {
+                title: "Atención al Cliente & Gestión de Mensajes",
+                description: "Respuestas rápidas, empáticas y resolutivas por WhatsApp, Instagram y redes sociales. Gestión de dudas, pedidos y atención post-venta.",
+                icon: MessageSquare,
+                badge: "Soporte & WhatsApp"
+            },
+            {
+                title: "Control de Caja, Cuentas y Planillas Contables",
+                description: "Conciliación diaria de caja chica, seguimiento de cuentas corrientes/fiados y armado de planillas ordenadas para tu contador (AFIP / IVA).",
+                icon: Calculator,
+                badge: "Finanzas Operativas"
+            }
+        ]
     },
     {
-        title: "Análisis y Reportes de Negocio",
-        description: "Análisis de rentabilidad por producto/categoría y creación de dashboards para visualizar ingresos, gastos y beneficios de forma clara.",
-        icon: BarChart3
-    },
-    {
-        title: "Procesos de Venta y Finanzas",
-        description: "Estrategias para agilizar el registro de ventas, gestionar cuentas corrientes de clientes y llevar un control ordenado de gastos y compras.",
-        icon: ShoppingCart
-    },
-    {
-        title: "Digitalización y Catálogo Online",
-        description: "Creación y personalización de catálogos web para expandir tu presencia digital y facilitar las ventas a través de canales online.",
-        icon: Globe
+        category: "Desarrollo Web & Soluciones Digitales",
+        description: "Creación de software moderno, interfaces rápidas y herramientas de automatización para potenciar tus ventas.",
+        icon: Code,
+        accentColor: "primary",
+        services: [
+            {
+                title: "Desarrollo de Aplicaciones Web y SaaS",
+                description: "Sistemas web a medida, plataformas en la nube y paneles de administración construidos con Next.js, Firebase y TypeScript.",
+                icon: Code,
+                badge: "Full Stack"
+            },
+            {
+                title: "Catálogos y Tiendas Digitales",
+                description: "Venta online fluida con catálogos autogestionables, pedidos directos a WhatsApp y pasarelas de pago integradas con Mercado Pago.",
+                icon: ShoppingCart,
+                badge: "E-commerce"
+            },
+            {
+                title: "Automatización con Inteligencia Artificial",
+                description: "Implementación de asistentes con IA para sugerencia de márgenes de ganancia, consejos predictivos de stock y redacción de copys comerciales.",
+                icon: Sparkles,
+                badge: "IA Aplicada"
+            }
+        ]
     }
 ];
+
+// Mantenemos compatibilidad con cualquier referencia anterior
+export const consultingServices = serviceCategories.flatMap(c => c.services);
+
 
 export const imageUrls = {
     perfil: '/profile.jpeg',
@@ -66,15 +118,19 @@ export const featuredProjects = [
         tech: ["Next.js", "Firebase", "Genkit AI", "Tailwind CSS"],
         github: "https://github.com/edumoyano86/Clarity",
         live: "https://clarity86.netlify.app/",
+        isPrivate: false,
         imageUrls: [imageUrls.clarity1, imageUrls.clarity2]
     },
     {
         id: "kontalo",
-        title: "Kontalo - Gestión Minorista",
-        description: "Plataforma de gestión para comercios minoristas con catálogo público, desarrollada para optimizar mis propios emprendimientos. El código fuente se mantiene en un repositorio privado por razones de seguridad, pero con gusto puedo otorgar acceso temporal para revisión.",
-        tech: ["Next.js", "Firebase", "Tailwind CSS"],
+        title: "Kontaló - Gestión Comercial & POS Cloud",
+        description: "SaaS integral en la nube y PWA para comercios minoristas. Incluye Punto de Venta ágil (hotkeys y código de barras), arqueo de turnos de caja chica, ajustes masivos de precios/stock con redondeo inteligente, reportes de rotación con IA para capital inmovilizado, exportador contable en 1 clic (AFIP / Libro IVA) y catálogo online con pedidos por WhatsApp y Mercado Pago.",
+        tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS", "PWA", "IA Asistiva", "Mercado Pago"],
         github: "#",
         live: "https://kontalo.com.ar",
+        isPrivate: true,
+        repoNotice: "Repositorio privado comercial. Acceso temporal a código disponible para reclutadores bajo solicitud.",
         imageUrls: [imageUrls.kontalo1, imageUrls.kontalo2]
     }
 ];
+

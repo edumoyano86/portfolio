@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Lock, CheckCircle2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ProjectCarousel } from "@/components/project-carousel";
 
@@ -16,33 +16,77 @@ const imageUrls = {
     portfolio2: '/portfolio2.png'
 };
 
+interface ProjectItem {
+    id: string;
+    title: string;
+    tagline?: string;
+    statusBadge?: string;
+    description: string;
+    highlights?: string[];
+    tech: string[];
+    github: string;
+    live: string;
+    isPrivate?: boolean;
+    repoNotice?: string;
+    liveLabel?: string;
+    imageUrls: string[];
+}
+
 export default function ProjectsPage() {
-    const projects = [
+    const projects: ProjectItem[] = [
+        {
+            id: "kontalo",
+            title: "Kontaló — Gestión Comercial & POS Cloud",
+            tagline: "SaaS integral en producción para comercios minoristas, distribuidoras y negocios multirubro.",
+            statusBadge: "SaaS en Producción",
+            description: "Plataforma en la nube y aplicación instalable (PWA) de alto rendimiento desarrollada para optimizar de punta a punta la operación comercial. Surgida para resolver las necesidades reales de mis propios comercios físicos y online, Kontaló centraliza ventas en mostrador, control de caja chica, stock en tiempo real, inteligencia artificial predictiva y facturación impositiva para contadores.",
+            highlights: [
+                "Punto de Venta (POS) ultrarrápido: atajos de teclado (F2, F4), escáner de código de barras físico o por cámara, cobros combinados e impresión térmica (80mm) o envío a WhatsApp con 1 clic.",
+                "Arqueo y Cierre de Turnos de Caja Chica: apertura con fondo inicial, registro de egresos operativos y arqueo ciego/guiado para detectar sobrantes o faltantes al centavo.",
+                "Gestión de Stock y Ajustes Masivos: actualización de precios por categoría o porcentaje con redondeo inteligente para mostrador ($10, $50, $100), mermas y carga masiva en Excel.",
+                "Inteligencia Artificial y Métricas: sugerencia de márgenes de ganancia (+30% a +100%) según rubro, consejos predictivos para rotar productos sin ventas hace +45 días (liberando capital inmovilizado) y redactor publicitario comercial.",
+                "Exportador para el Contador (Libro IVA / AFIP): planilla mensual en 1 clic lista para enviar por Excel o WhatsApp, con modo Monotributo y Responsable Inscripto (Neto gravado, Débito/Crédito fiscal).",
+                "Canales Online, PWA y Multi-Sucursal: catálogo web autogestionable con pedidos a WhatsApp, tienda online con Mercado Pago, PWA instalable en celular/PC y soporte para múltiples locales con roles y permisos seguros."
+            ],
+            tech: ["Next.js", "Firebase (Firestore & Auth)", "TypeScript", "Tailwind CSS", "PWA", "IA Predictiva", "Mercado Pago API", "Shadcn UI"],
+            github: "#",
+            live: "https://kontalo.com.ar",
+            isPrivate: true,
+            repoNotice: "Repositorio privado comercial. Acceso temporal a código fuente disponible para reclutadores bajo solicitud.",
+            liveLabel: "Visitar kontalo.com.ar",
+            imageUrls: [imageUrls.kontalo1, imageUrls.kontalo2]
+        },
         {
             id: "clarity",
             title: "Clarity - Finanzas Personales",
+            tagline: "Gestión financiera inteligente y seguimiento de inversiones.",
+            statusBadge: "Proyecto Activo",
             description: "Clarity es una aplicación web integral de finanzas personales diseñada para dar una visión clara y completa de tu salud financiera. Combina herramientas de seguimiento de gastos e ingresos, gestión de un portafolio de inversiones (acciones y criptomonedas), control de deudas, agenda de citas y un bloc de notas. Incluye un asistente con IA que ofrece sugerencias de ahorro personalizadas.",
+            highlights: [
+                "Seguimiento patrimonial en tiempo real: cálculo de activos netos, pasivos e historial financiero.",
+                "Portafolio de Inversiones: seguimiento de acciones y criptomonedas con visualizaciones interactivas.",
+                "Asistente con Inteligencia Artificial: sugerencias personalizadas de optimización de presupuesto basadas en Genkit AI.",
+                "Agenda y Bloc de Notas integrados para planificación de compromisos financieros."
+            ],
             tech: ["Next.js", "Firebase", "Genkit AI", "TypeScript", "Tailwind CSS"],
             github: "https://github.com/edumoyano86/Clarity",
             live: "https://clarity86.netlify.app/",
+            isPrivate: false,
+            liveLabel: "Ver Demo en Vivo",
             imageUrls: [imageUrls.clarity1, imageUrls.clarity2]
-        },
-        {
-            id: "kontalo",
-            title: "Kontalo - Gestión Minorista",
-            description: "Plataforma SaaS (Software as a Service) diseñada para simplificar la gestión de comercios minoristas. Permite a los dueños de negocios administrar su inventario, gestionar un catálogo de productos público y optimizar sus operaciones diarias. El proyecto fue desarrollado utilizando Next.js para el frontend, Firebase (Firestore y Auth) para el backend y la base de datos, y Tailwind CSS para un diseño moderno y responsive. Creada con Firebase Studio. El código fuente se mantiene en un repositorio privado por razones de seguridad, pero con gusto puedo otorgar acceso temporal para revisión.",
-            tech: ["Next.js", "Firebase", "TypeScript", "Tailwind CSS", "Shadcn UI"],
-            github: "#",
-            live: "https://kontalo.com.ar",
-            imageUrls: [imageUrls.kontalo1, imageUrls.kontalo2]
         },
         {
             id: "wip-1",
             title: "Portfolio Personal",
-            description: "Este mismo portfolio, diseñado para mostrar mis habilidades y proyectos. Fue construido desde cero utilizando Next.js, TypeScript y Tailwind CSS, con componentes de Shadcn UI para una interfaz limpia y moderna. El objetivo es que sea una carta de presentación interactiva y un reflejo de mi trabajo. ¡Siempre en constante mejora!",
+            tagline: "Arquitectura moderna orientada a rendimiento y usabilidad.",
+            statusBadge: "En Constante Evolución",
+            description: "Este mismo portfolio, diseñado para mostrar mis habilidades en desarrollo de software y servicios de gestión remota. Fue construido desde cero utilizando Next.js, TypeScript y Tailwind CSS, con componentes de Shadcn UI para una interfaz limpia, accesible y moderna.",
             tech: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
             github: "#",
             live: "/",
+            isPrivate: true,
+            repoNotice: "Código fuente disponible en GitHub (consultar repositorio).",
+            liveLabel: "Página Principal",
             imageUrls: [imageUrls.portfolio1, imageUrls.portfolio2]
         },
     ];
@@ -54,13 +98,13 @@ export default function ProjectsPage() {
                     Mis Proyectos
                 </h1>
                 <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                    Una selección de proyectos que demuestran mis habilidades en desarrollo full-stack.
+                    Soluciones tecnológicas en producción y herramientas diseñadas para resolver desafíos reales de negocio y productividad.
                 </p>
             </header>
 
             <div className="space-y-24">
                 {projects.map((project, index) => (
-                    <div key={project.id} className={`grid lg:grid-cols-2 gap-12 items-center`}>
+                    <div key={project.id} className="grid lg:grid-cols-2 gap-12 items-start">
                         <div className={`relative group/item cursor-pointer overflow-hidden rounded-lg ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
                             <ProjectCarousel
                                 imageUrls={project.imageUrls}
@@ -69,25 +113,73 @@ export default function ProjectsPage() {
                         </div>
 
                         <div>
-                            <h2 className="text-3xl font-bold mb-3">{project.title}</h2>
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                                <h2 className="text-3xl font-bold">{project.title}</h2>
+                                {project.statusBadge && (
+                                    <Badge variant="outline" className="border-primary/40 text-primary text-xs">
+                                        {project.statusBadge}
+                                    </Badge>
+                                )}
+                            </div>
+
+                            {project.tagline && (
+                                <p className="text-sm font-medium text-accent mb-3">{project.tagline}</p>
+                            )}
+
                             <div className="flex flex-wrap gap-2 mb-6">
                                 {project.tech.map(tech => (
                                     <Badge key={tech} variant="secondary">{tech}</Badge>
                                 ))}
                             </div>
-                            <p className="text-muted-foreground text-lg mb-8 leading-relaxed">{project.description}</p>
-                            <div className="flex gap-4">
-                                <Button variant="outline" asChild className="flex-1" disabled={project.github === '#'}>
-                                    <Link href={project.github} target="_blank" rel="noopener noreferrer">
-                                        <Github className="mr-2" /> GitHub
-                                    </Link>
-                                </Button>
+
+                            <p className="text-muted-foreground text-base mb-6 leading-relaxed">{project.description}</p>
+
+                            {project.highlights && project.highlights.length > 0 && (
+                                <div className="mb-6 p-4 rounded-lg bg-card/60 border border-border/50">
+                                    <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                                        Características y Módulos Clave:
+                                    </h3>
+                                    <ul className="space-y-2.5">
+                                        {project.highlights.map((highlight, hIndex) => (
+                                            <li key={hIndex} className="text-sm text-foreground/90 flex items-start gap-2">
+                                                <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                                                <span>{highlight}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                {project.isPrivate ? (
+                                    <Button 
+                                        variant="outline" 
+                                        className="flex-1 text-muted-foreground hover:text-foreground cursor-default"
+                                        title={project.repoNotice || "Repositorio privado comercial"}
+                                    >
+                                        <Lock className="mr-2 h-4 w-4 text-amber-500" /> Repo Privado
+                                    </Button>
+                                ) : (
+                                    <Button variant="outline" asChild className="flex-1" disabled={project.github === '#'}>
+                                        <Link href={project.github} target="_blank" rel="noopener noreferrer">
+                                            <Github className="mr-2 h-4 w-4" /> GitHub
+                                        </Link>
+                                    </Button>
+                                )}
+
                                 <Button asChild className="flex-1" disabled={project.live === '#'}>
                                     <Link href={project.live} target="_blank" rel="noopener noreferrer">
-                                        <ExternalLink className="mr-2" /> Ver Demo
+                                        <ExternalLink className="mr-2 h-4 w-4" /> {project.liveLabel || 'Ver Demo'}
                                     </Link>
                                 </Button>
                             </div>
+
+                            {project.repoNotice && (
+                                <p className="text-xs text-muted-foreground mt-3 flex items-center gap-1.5">
+                                    <Lock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                                    <span>{project.repoNotice}</span>
+                                </p>
+                            )}
                         </div>
                     </div>
                 ))}
@@ -95,3 +187,4 @@ export default function ProjectsPage() {
         </div>
     );
 }
+
