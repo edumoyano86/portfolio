@@ -204,21 +204,34 @@ function CVContent() {
                   {/* Clarity */}
                   <div className="relative pl-6 border-l-2 border-border/80 space-y-2">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <h4 className="text-xl font-bold">Clarity — Plataforma de Finanzas Personales con IA</h4>
-                      <Badge variant="secondary">2024</Badge>
+                      <h4 className="text-xl font-bold">Clarity — Tus Finanzas Claras (v2.0)</h4>
+                      <Badge variant="secondary">2024 - 2026</Badge>
                     </div>
-                    <p className="text-sm font-medium text-muted-foreground">Desarrollador Full Stack | <a href="https://clarity86.netlify.app" target="_blank" rel="noreferrer" className="text-primary hover:underline">clarity86.netlify.app</a></p>
+                    <p className="text-sm font-medium text-muted-foreground">Desarrollador Full Stack | Web Oficial: <a href="https://clarity86.netlify.app" target="_blank" rel="noreferrer" className="text-primary hover:underline">clarity86.netlify.app</a> | GitHub: <a href="https://github.com/edumoyano86/Clarity" target="_blank" rel="noreferrer" className="text-primary hover:underline">github.com/edumoyano86/Clarity</a></p>
                     <ul className="text-sm text-foreground/80 space-y-1.5 pt-2">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <span>Desarrollo de plataforma para control patrimonial, registro de ingresos/gastos, seguimiento de inversiones (cripto/acciones) y gestión de deudas.</span>
+                        <span>Desarrolló plataforma integral con Next.js 15, React 19 y Firebase Firestore para salud financiera, desendeudamiento y portafolio de inversión.</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <span>Integración de Genkit AI para recomendaciones de ahorro y hábitos financieros personalizados.</span>
+                        <span>Implementó Dashboard con la Regla Financiera 50/30/20 (barras de progreso tricolor) y alertas automáticas de vencimiento de deudas urgentes.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                        <span>Construyó sistema de cuentas por pagar con historial desplegable de abonos y función de reversión segura sincronizada con el saldo restante.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                        <span>Integró APIs en tiempo real para cotizaciones de activos: CoinGecko API (criptomonedas) y Finnhub API (acciones/CEDEARs) con alternador ARS/USD.</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                        <span>Desarrolló flujos predictivos con Genkit AI (savings-suggestions y budget-alerts) y exportador a Excel (.CSV con cabecera BOM UTF-8).</span>
                       </li>
                     </ul>
                   </div>
+
 
                   {/* Freelance */}
                   <div className="relative pl-6 border-l-2 border-border/80 space-y-2">

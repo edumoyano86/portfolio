@@ -58,23 +58,28 @@ export default function ProjectsPage() {
         },
         {
             id: "clarity",
-            title: "Clarity - Finanzas Personales",
-            tagline: "Gestión financiera inteligente y seguimiento de inversiones.",
-            statusBadge: "Proyecto Activo",
-            description: "Clarity es una aplicación web integral de finanzas personales diseñada para dar una visión clara y completa de tu salud financiera. Combina herramientas de seguimiento de gastos e ingresos, gestión de un portafolio de inversiones (acciones y criptomonedas), control de deudas, agenda de citas y un bloc de notas. Incluye un asistente con IA que ofrece sugerencias de ahorro personalizadas.",
+            title: "Clarity — Tus Finanzas Claras (v2.0)",
+            tagline: "Control patrimonial, desendeudamiento sistemático, inversiones multiactivos e IA predictiva.",
+            statusBadge: "v2.0 en Producción",
+            description: "Plataforma integral de gestión financiera personal y desendeudamiento sistemático desarrollada con Next.js 15, React 19 y Firebase Firestore. Diseñada bajo principios de finanzas conductuales, visibilidad total y soberanía de datos, implementa la regla 50/30/20, seguimiento de criptomonedas y acciones en tiempo real con APIs de mercado, historial de abonos con reversión segura y análisis predictivo mediante Genkit AI.",
             highlights: [
-                "Seguimiento patrimonial en tiempo real: cálculo de activos netos, pasivos e historial financiero.",
-                "Portafolio de Inversiones: seguimiento de acciones y criptomonedas con visualizaciones interactivas.",
-                "Asistente con Inteligencia Artificial: sugerencias personalizadas de optimización de presupuesto basadas en Genkit AI.",
-                "Agenda y Bloc de Notas integrados para planificación de compromisos financieros."
+                "Dashboard Inteligente & Regla 50/30/20: KPIs de balance, flujo de fondos y distribución de gastos con barras de progreso tricolor (50% necesidades/deudas, 30% deseos, 20% ahorro/inversión).",
+                "Alertas Preventivas de Deudas: monitoreo automático con badges de urgencia si una cuenta vence en 3 a 5 días o si ya está vencida, priorizando las cuentas más críticas.",
+                "Desendeudamiento Sistemático & Reversión Segura: ordenamiento automático (deudas pendientes al inicio, saldadas al final), historial desplegable de abonos con porcentaje cubierto y botón de anulación que recalcula el saldo pendiente de forma sincronizada.",
+                "Portafolio de Inversiones con Cotizaciones en Vivo: seguimiento de criptomonedas (CoinGecko API) y acciones/CEDEARs (Finnhub API) con alternador instantáneo ARS/USD, registro de operaciones y cálculo de rendimientos.",
+                "Inteligencia Artificial con Genkit AI: flujos predictivos de sugerencias de ahorro personalizadas (savings-suggestions) y detección temprana de riesgo de sobregiro (budget-alerts).",
+                "Lista de Deseos y Consumo Consciente: clasificación por prioridad (Alta, Media, Baja) integrada con el 30% de la regla 50/30/20 para evitar compras impulsivas y calcular ahorro acumulado.",
+                "Soberanía de Datos & Exportación a Excel: descarga en 1 clic de reportes en CSV con cabecera BOM UTF-8 y delimitador argentino (;) para apertura nativa y sin errores de caracteres en Microsoft Excel y Google Sheets.",
+                "Agenda Financiera & Notificador Activo: calendario con react-day-picker v9 y sistema de alertas persistentes (Toast) que dispara avisos de compromisos y vencimientos del día al iniciar sesión."
             ],
-            tech: ["Next.js", "Firebase", "Genkit AI", "TypeScript", "Tailwind CSS"],
+            tech: ["Next.js 15", "React 19", "Firebase (Firestore & Auth)", "Genkit AI", "TypeScript", "CoinGecko API", "Finnhub API", "Tailwind CSS", "Shadcn UI"],
             github: "https://github.com/edumoyano86/Clarity",
             live: "https://clarity86.netlify.app/",
             isPrivate: false,
-            liveLabel: "Ver Demo en Vivo",
+            liveLabel: "Ver Demo en Vivo (clarity86.netlify.app)",
             imageUrls: [imageUrls.clarity1, imageUrls.clarity2]
         },
+
         {
             id: "wip-1",
             title: "Portfolio Personal",

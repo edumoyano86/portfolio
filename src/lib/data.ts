@@ -16,15 +16,49 @@ import {
     Sparkles 
 } from "lucide-react";
 
-export const skills = [
-  { name: "React.js", icon: Layers },
-  { name: "Node.js", icon: Code },
-  { name: "JavaScript", icon: Code },
-  { name: "Express.js", icon: Code },
-  { name: "React Native", icon: Smartphone },
-  { name: "SQL/NoSQL", icon: Database },
-  { name: "Tailwind CSS", icon: PenTool },
+export const skillCategories = [
+  {
+    category: "Desarrollo Web & Tecnologías",
+    description: "Herramientas y lenguajes para construir aplicaciones modernas, SaaS y plataformas escalables.",
+    accentColor: "primary",
+    icon: Code,
+    skills: [
+      { name: "Next.js (App Router)", icon: Layers },
+      { name: "React.js", icon: Layers },
+      { name: "TypeScript", icon: Code },
+      { name: "JavaScript (ES6+)", icon: Code },
+      { name: "Firebase (Firestore & Auth)", icon: Database },
+      { name: "Node.js & Express", icon: Code },
+      { name: "Tailwind CSS", icon: PenTool },
+      { name: "Genkit AI / LLMs", icon: Sparkles },
+      { name: "SQL & NoSQL", icon: Database },
+      { name: "Git & GitHub", icon: Code },
+      { name: "APIs & Mercado Pago", icon: Globe },
+      { name: "PWA (Web Apps Instalables)", icon: Smartphone },
+    ]
+  },
+  {
+    category: "Gestión Administrativa, E-commerce & Soporte",
+    description: "Competencias operativas, comerciales y de atención remota para el día a día del negocio.",
+    accentColor: "accent",
+    icon: ClipboardList,
+    skills: [
+      { name: "Data Entry & Carga de Productos", icon: FileSpreadsheet },
+      { name: "Atención al Cliente (WhatsApp / Redes)", icon: MessageSquare },
+      { name: "Control de Inventario & Stock", icon: ClipboardList },
+      { name: "Arqueo de Caja Chica & Cierres de Turno", icon: Calculator },
+      { name: "Excel & Google Sheets Avanzado", icon: FileSpreadsheet },
+      { name: "Planillas Contables (Libro IVA / AFIP)", icon: Calculator },
+      { name: "Operación de Tiendas Online & E-commerce", icon: ShoppingCart },
+      { name: "Conciliación de Pagos & Transferencias", icon: Calculator },
+      { name: "Gestión de Cuentas Corrientes y Fiados", icon: ClipboardList },
+      { name: "Redacción Comercial & Contenido (TikTok / IG)", icon: Sparkles },
+    ]
+  }
 ];
+
+export const skills = skillCategories[0].skills;
+
 
 export const experience = [
     {
@@ -112,16 +146,6 @@ export const imageUrls = {
 
 export const featuredProjects = [
     {
-        id: "clarity",
-        title: "Clarity - Finanzas Personales",
-        description: "Aplicación integral de finanzas para un seguimiento claro de tus activos, transacciones y deudas, con sugerencias de IA.",
-        tech: ["Next.js", "Firebase", "Genkit AI", "Tailwind CSS"],
-        github: "https://github.com/edumoyano86/Clarity",
-        live: "https://clarity86.netlify.app/",
-        isPrivate: false,
-        imageUrls: [imageUrls.clarity1, imageUrls.clarity2]
-    },
-    {
         id: "kontalo",
         title: "Kontaló - Gestión Comercial & POS Cloud",
         description: "SaaS integral en la nube y PWA para comercios minoristas. Incluye Punto de Venta ágil (hotkeys y código de barras), arqueo de turnos de caja chica, ajustes masivos de precios/stock con redondeo inteligente, reportes de rotación con IA para capital inmovilizado, exportador contable en 1 clic (AFIP / Libro IVA) y catálogo online con pedidos por WhatsApp y Mercado Pago.",
@@ -131,6 +155,17 @@ export const featuredProjects = [
         isPrivate: true,
         repoNotice: "Repositorio privado comercial. Acceso temporal a código disponible para reclutadores bajo solicitud.",
         imageUrls: [imageUrls.kontalo1, imageUrls.kontalo2]
+    },
+    {
+        id: "clarity",
+        title: "Clarity — Tus Finanzas Claras (v2.0)",
+        description: "Plataforma integral de finanzas personales y desendeudamiento sistemático construida con Next.js 15, React 19, Firebase y Genkit AI. Incorpora la regla 50/30/20, alertas preventivas de deudas con historial de abonos y reversión segura, portafolio de inversiones con cotizaciones en tiempo real (CoinGecko & Finnhub APIs), lista de prioridades de consumo y exportación a Excel con UTF-8 BOM.",
+        tech: ["Next.js 15", "React 19", "Firebase", "Genkit AI", "TypeScript", "CoinGecko API", "Finnhub API", "Tailwind CSS"],
+        github: "https://github.com/edumoyano86/Clarity",
+        live: "https://clarity86.netlify.app/",
+        isPrivate: false,
+        imageUrls: [imageUrls.clarity1, imageUrls.clarity2]
     }
 ];
+
 
